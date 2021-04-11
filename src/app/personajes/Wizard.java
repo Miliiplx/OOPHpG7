@@ -3,11 +3,12 @@ package app.personajes;
 import java.util.List;
 
 import app.artefactos.Artefacto;
+import app.interfaces.IHaceMagia;
 import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
 import app.transportes.Escoba;
 
-public class Wizard extends Persona {
+public class Wizard extends Persona implements IHaceMagia {
     
 
 private int energiaMagica;       //Posee la energía máx que posee el mago. 150
@@ -54,5 +55,30 @@ public boolean getMagoOscuro(){
 }
 public void setMagoOscuro(boolean magoOscuro){
     this.magoOscuro = magoOscuro;
+}
+@Override
+public Poder getPoderInicia() {
+    // TODO Auto-generated method stub
+    return null;
+}
+@Override
+public void setPoder(Poder poder) {
+    // TODO Auto-generated method stub
+    
+}
+@Override
+public void aprender(Hechizo hechizo) {
+    // TODO Auto-generated method stub
+    
+}
+@Override
+public void atacar(Personaje personaje, Hechizo hechizo) {
+    // TODO Auto-generated method stub
+    
+}
+@Override
+public void atacar(Personaje personaje, String hechizo) {
+    // TODO Auto-generated method stub
+    
 }
 }

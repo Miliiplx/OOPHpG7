@@ -16,6 +16,6 @@ public interface IHaceMagia {
     void atacar(Personaje personaje, Hechizo hechizo); //Ataca a personaje “personaje” usando el hechizo “hechizo”
     void atacar(Personaje personaje, String hechizo); //Ataca a un personaje usando nombre de hechizo
 
-    /* FALTA AGREGAR LA IMPLEMENTACION EN WIZARD Y ELFO */
+   
     
 }
