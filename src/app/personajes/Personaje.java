@@ -38,4 +38,15 @@ public class Personaje {
     public void setCasa(String casa){
          this. casa = casa;
     }
+
+    //Metodo
+
+    public boolean estaVivo(){
+        if (this.salud > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
