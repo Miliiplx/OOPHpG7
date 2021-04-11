@@ -1,8 +1,9 @@
 package app.artefactos;
 
+import app.interfaces.IEsMagico;
 import app.poderes.Poder; //PREGUNTAR SI ESTO VA ASI. DE LO CONTRARIO ME SALTA ERROR EN EL TIPO.
 
-public class Artefacto {
+public class Artefacto implements IEsMagico {
 
     public Artefacto(String nombre, Poder poder){
         this.nombre = nombre;
@@ -48,6 +49,20 @@ public class Artefacto {
 
     public void setPoder(Poder poder){
         this.poder = poder;
+    }
+
+    //IMPLEMENTO LAS INTERFACES.
+    
+    @Override
+    public boolean esInvisibleAMuggles() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean esInvisible() {
+        // TODO Auto-generated method stub
+        return false;
     }
 
     
