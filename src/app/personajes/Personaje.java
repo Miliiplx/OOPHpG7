@@ -1,4 +1,5 @@
 package app.personajes;
+import java.util.*;
 
 public class Personaje {
 
@@ -6,6 +7,8 @@ public class Personaje {
     private int salud;
     private int edad;
     private String casa;
+    private List<Wizard> wizards = new ArrayList<>();
+
 
 
     //Getter y Setter
@@ -37,6 +40,15 @@ public class Personaje {
       
     public void setCasa(String casa){
          this. casa = casa;
+    }
+
+    
+    public List<Wizard> getWizards() {
+        return this.wizards;
+    }
+
+    public void setWizards(List<Wizard> wizards) {
+        this.wizards = wizards;
     }
 
     //Metodo

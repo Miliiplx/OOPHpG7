@@ -4,12 +4,12 @@ import java.util.*;
 
 import app.poderes.hechizos.Hechizo;
 
-public class Poder {
+public abstract class Poder {
     private String nombre;
     private String descripcion;
-    public List<Hechizo> hechizos = new ArrayList<>();
+    private List<Hechizo> hechizos = new ArrayList<>(); 
 
-
+ //GETTERS Y SETTERS
 
     public String getNombre(){
         return this.nombre;
@@ -28,7 +28,7 @@ public class Poder {
         return this.hechizos;
     }
 
-    public void setTemporadas(List<Hechizo> hechizos) {
+    public void setHechizos(List<Hechizo> hechizos) {
         this.hechizos = hechizos;
     }
     

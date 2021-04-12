@@ -7,6 +7,8 @@ public class Hechizo extends Poder{
     private int nivelCuracion;
     private int energiaMagica;
 
+    //GETTER Y SETTER
+
     public boolean getEsOscuro(){
         return this.esOscuro;
     }
