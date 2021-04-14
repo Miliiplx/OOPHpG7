@@ -8,7 +8,7 @@ public class Personaje {
     private int edad;
     private String casa;
     private List<Wizard> wizards = new ArrayList<>();
-
+    private List<Muggle> muggles = new ArrayList<>();
 
 
     //Getter y Setter
@@ -49,6 +49,14 @@ public class Personaje {
 
     public void setWizards(List<Wizard> wizards) {
         this.wizards = wizards;
+    }
+
+    public List<Muggle> getMuggles() {
+        return this.muggles;
+    }
+
+    public void setMuggles(List<Muggle> muggles) {
+        this.muggles = muggles;
     }
 
     //Metodo
