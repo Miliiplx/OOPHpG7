@@ -18,7 +18,7 @@ public class TrenExpresoHowards extends Transporte implements IEsMagico {
         this.anioDeFabricacion = anioDeFabricacion;
     }
    
-   //Implemento la interface
+   //Implemento la interface.
 
    @Override
    public boolean esInvisibleAMuggles(){

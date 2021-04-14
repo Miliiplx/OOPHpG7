@@ -4,7 +4,7 @@ import app.interfaces.IEsMagico;
 
 public class NimbusTwo extends Escoba implements IEsMagico{
 
-    //NimbusTwo es la escoba NIMBUS2001 
+    //NimbusTwo es la escoba NIMBUS2001 .
 
     //Implemento las interfaces 
 

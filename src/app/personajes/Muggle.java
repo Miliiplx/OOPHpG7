@@ -4,7 +4,7 @@ public class Muggle extends Persona {
     
     private String parentescoHarry;
 
-    //Getters y Setters
+    //Getters y Setters.
 
     public String getParentescoHarry(){
         return this.parentescoHarry;

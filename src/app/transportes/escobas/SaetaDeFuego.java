@@ -4,7 +4,7 @@ import app.interfaces.IEsMagico;
 
 public class SaetaDeFuego extends Escoba implements IEsMagico {
  
-    // Es la escoba más poderosa - Escoba para magos malos
+    // Es la escoba más poderosa - Escoba para magos malos.
 
     //Implemento las interfaces 
 

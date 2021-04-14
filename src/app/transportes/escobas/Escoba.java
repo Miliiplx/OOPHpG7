@@ -6,7 +6,7 @@ public class Escoba extends Transporte implements IEsMagico {
 
     public Escoba(String nombre, Poder poder){
         this.nombre = nombre;
-        this.poder = poder;
+        this.poder = poder; //
     }
 
     //Dos escobas magicas para magos buenos (Nimbus)

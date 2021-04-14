@@ -47,7 +47,7 @@ public class Transporte  implements IEsMagico {
         this.escobas = escobas;
     }
     
-    //Implemento las interfaces
+    //Implemento las interfaces.
 
     @Override
     public boolean esInvisibleAMuggles(){

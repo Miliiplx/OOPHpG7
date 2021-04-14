@@ -8,7 +8,7 @@ public class NimbusOne  extends Escoba implements IEsMagico{
 
  // NimbusOne es la escoba  NIMBUS2000 - Primera escoba de Harry
 
-    //Implemento las interfaces 
+    //Implemento las interfaces .
 
     @Override
     public boolean esInvisibleAMuggles(){
