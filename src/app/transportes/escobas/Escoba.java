@@ -1,13 +1,18 @@
 package app.transportes.escobas;
 
 import app.interfaces.IEsMagico;
+import app.poderes.Poder;
+import app.transportes.*;
 
 public class Escoba extends Transporte implements IEsMagico {
 
     public Escoba(String nombre, Poder poder){
-        this.nombre = nombre;
-        this.poder = poder; //
+        super (nombre, poder); // cambio los this por super y se soluciona el problema.
     }
+
+
+    private String nombre; //15/04
+    private Poder poder; // 15/04
 
     //Dos escobas magicas para magos buenos (Nimbus)
     //Una escoba magica para magos malos (Saeta)

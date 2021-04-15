@@ -3,6 +3,8 @@ package app.transportes;
 import java.util.*;
 
 import app.interfaces.IEsMagico;
+import app.poderes.Poder; //15/04
+import app.transportes.escobas.Escoba; //15/04
 
 public class Transporte  implements IEsMagico {
 
