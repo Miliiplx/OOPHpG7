@@ -87,8 +87,14 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
-        // TODO Auto-generated method stub
+        int n = 1;
+/*         if(!this.magoOscuro  && hechizo.getEsOscuro()){
+            this.magoOscuro = true;
+            n = 2;
+        } */
+        personaje.setSalud(personaje.getSalud() - n * hechizo.getNivelDanio());
 
+        this.energiaMagica = this.energiaMagica - hechizo.getEnergiaMagica();
     }
 
     @Override
