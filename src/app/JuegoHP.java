@@ -26,7 +26,7 @@ public class JuegoHP {
 
         Wizard HP = new Wizard();
         HP.setNombre("Harry Potter");
-        HP.setCasa("Grifindor");
+        HP.setCasa("Gryffindor");
         HP.setEdad(15);
         HP.setEnergiaMagica(120);
         HP.setSalud(100);
@@ -61,6 +61,68 @@ public class JuegoHP {
         //Bellatrix.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a Titanic al catalogo
         this.wizards.add(Bellatrix);
+
+        this.inicializarHechizos();
+
+        Wizard Ron = new Wizard();
+        Ron.setNombre("Ron Weasley");
+        Ron.setCasa("Gryffindor");
+        Ron.setEdad(15);
+        Ron.setEnergiaMagica(120);
+        Ron.setSalud(100);
+        //Ron.setEscoba(escoba);
+        Ron.setMagoOscuro(false);
+        List<Hechizo> RonHechizos = new ArrayList<>();
+        RonHechizos.add(this.hechizosDefensa.get(0));
+        RonHechizos.add(this.hechizosAtaque.get(0));
+        Ron.setHechizos(RonHechizos);
+        //Poder RonPoder = new Poder();
+        //RonPoder.setNombre("Inivisibilidad");
+        //Ron.setPoderInicial(poderInicial);
+        // Recien ahora estoy agregando a Personaje al catalogo
+        this.wizards.add(Ron);
+
+        this.inicializarHechizos();
+
+        Wizard Hermione = new Wizard();
+        Hermione.setNombre("Hermione Granger");
+        Hermione.setCasa("Gryffindor");
+        Hermione.setEdad(15);
+        Hermione.setEnergiaMagica(120);
+        Hermione.setSalud(100);
+        //Ron.setEscoba(escoba);
+        Hermione.setMagoOscuro(false);
+        List<Hechizo> HermioneHechizos = new ArrayList<>();
+        HermioneHechizos.add(this.hechizosDefensa.get(0));
+        HermioneHechizos.add(this.hechizosAtaque.get(0));
+        Hermione.setHechizos(HermioneHechizos);
+        //Poder RonPoder = new Poder();
+        //RonPoder.setNombre("Inivisibilidad");
+        //Ron.setPoderInicial(poderInicial);
+        // Recien ahora estoy agregando a Personaje al catalogo
+        this.wizards.add(Hermione);
+
+    }
+
+    public void inicializarMuggles(){
+
+        Muggle vernonDursley = new Muggle();
+        vernonDursley.setNombre("Nernon Dursley");
+        vernonDursley.setSalud(100);
+        vernonDursley.setEdad(65); //Nacio en 1928- Edad en el momento que HP recibe la carta.
+        vernonDursley.setParentescoHarry("Tío");
+
+        Muggle petuniaDursley = new Muggle();
+        petuniaDursley.setNombre("Petunia Dursley");
+        petuniaDursley.setSalud(100);
+        petuniaDursley.setEdad(44); //-Nacio en 1949- Edad en el momento que HP recibe la carta.
+        petuniaDursley.setParentescoHarry("Tía");
+
+        Muggle dudleyDursley = new Muggle();
+        dudleyDursley.setNombre("Dudley Dursley");
+        dudleyDursley.setSalud(100);
+        dudleyDursley.setEdad(13); //-Pelicula 1- Nivel 1.
+        dudleyDursley.setParentescoHarry("Primo");
 
     }
 
