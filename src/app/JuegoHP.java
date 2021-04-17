@@ -6,11 +6,16 @@ import java.util.List;
 import app.personajes.Elfo;
 import app.personajes.Muggle;
 import app.personajes.Wizard;
-import app.poderes.Poder;
+import app.poderes.hechizos.Accio;
 import app.poderes.hechizos.CaveInimicum;
+import app.poderes.hechizos.Crucio;
+import app.poderes.hechizos.Episkey;
+import app.poderes.hechizos.Expelliarmus;
 import app.poderes.hechizos.Hechizo;
 import app.poderes.hechizos.HechizoAtaque;
+import app.poderes.hechizos.HechizoCuracion;
 import app.poderes.hechizos.HechizoDefensa;
+import app.poderes.hechizos.HechizoOcio;
 import app.poderes.hechizos.SectumSempra;
 
 public class JuegoHP {
@@ -19,6 +24,8 @@ public class JuegoHP {
     private List<Elfo> elfos = new ArrayList<>();
     private List<HechizoDefensa> hechizosDefensa = new ArrayList<>();
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
+    private List<HechizoOcio> hechizosOcio =    new ArrayList<>();
+    private List<HechizoCuracion> hechizosCuracion = new ArrayList();
 
 
 
@@ -158,7 +165,7 @@ public class JuegoHP {
         
      }
 
-        
+     // Hechizos  
 
     private void inicializarHechizos() {
         CaveInimicum caveInimicum = new CaveInimicum();
@@ -178,6 +185,46 @@ public class JuegoHP {
         sectumSempra.setNivelCuracion(0);
         sectumSempra.setNivelDanio(40);
         hechizosAtaque.add(sectumSempra);
+
+        Expelliarmus expelliarmus = new Expelliarmus();
+        expelliarmus.setNombre("Expelliarmus");
+        expelliarmus.setDescripcion("Defensa");
+        expelliarmus.setEnergiaMagica(30);
+        expelliarmus.setEsOscuro(false);
+        expelliarmus.setNivelCuracion(0);
+        expelliarmus.setNivelDanio(40);
+        hechizosDefensa.add(expelliarmus);
+
+        
+        Crucio crucio = new Crucio();
+        crucio.setNombre("Crucio");
+        crucio.setDescripcion("Ataque");
+        crucio.setEnergiaMagica(30);
+        crucio.setEsOscuro(true);
+        crucio.setNivelCuracion(0);
+        expelliarmus.setNivelDanio(40);
+        hechizosAtaque.add(crucio);
+
+        Accio accio = new Accio();
+        accio.setNombre("Accio");
+        accio.setDescripcion("Ocio");
+        accio.setEnergiaMagica(30);
+        accio.setEsOscuro(false);
+        accio.setNivelCuracion(0);
+        accio.setNivelDanio(40);
+        hechizosOcio.add(accio);
+
+        Episkey episkey = new Episkey();
+        episkey.setNombre("Episkey");
+        episkey.setDescripcion("Curacion");
+        episkey.setEnergiaMagica(30);
+        episkey.setEsOscuro(false);
+        episkey.setNivelCuracion(0);
+        episkey.setNivelDanio(40);
+        hechizosCuracion.add(episkey);
+
+
+
     }
 
     public List<Wizard> getWizards() {
