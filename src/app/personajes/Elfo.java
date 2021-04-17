@@ -8,7 +8,13 @@ import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
 
 public class Elfo extends Criatura implements IHaceMagia {
+
     
+public Elfo(String nombre, int salud,int energiaMagica) {
+        super(nombre, salud);
+        this.energiaMagica = energiaMagica;
+    }
+
 private int energiaMagica;    //Posee la energia máx que posee el elfo. Max 150
 private Artefacto artefacto;  //Artefacto que porta el Elfo
 private List<Hechizo> hechizos; //Los hechizos que aprendio a usar

@@ -24,7 +24,7 @@ public class App {
 
         int personajeSeleccionado1 = Teclado.nextInt() - 1;
 
-        Wizard p1 = new Wizard();
+        Wizard p1 = new Wizard(null, personajeSeleccionado1, null, personajeSeleccionado1);
         p1 = juego.getWizards().get(personajeSeleccionado1);
         
         System.out.println("Selecciona el personaje del segundo jugador (Ingrese el numero del personaje deseado): ");
@@ -35,7 +35,7 @@ public class App {
         
         int personajeSeleccionado2 = Teclado.nextInt() - 1;
         
-        Wizard p2 = new Wizard();
+        Wizard p2 = new Wizard(null, personajeSeleccionado2, null, personajeSeleccionado2);
         p2 = juego.getWizards().get(personajeSeleccionado2);
         
         System.out.println("Personaje 1 es: " + p1.getNombre());

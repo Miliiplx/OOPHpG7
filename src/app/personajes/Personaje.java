@@ -1,12 +1,11 @@
 package app.personajes;
 import java.util.*;
 
-public class Personaje {
+    public class Personaje {
 
-    private String nombre;
-    private int salud;
+    protected String nombre;
+    protected int salud;
     private int edad;
-    private String casa;
     private List<Wizard> wizards = new ArrayList<>();
     private List<Muggle> muggles = new ArrayList<>();
     
@@ -32,15 +31,6 @@ public class Personaje {
     }
     public void setEdad (int edad){
         this.edad = edad;
-    }
-
-    
-    public String getCasa(){
-        return this.casa;
-    }
-      
-    public void setCasa(String casa){
-         this. casa = casa;
     }
 
     
