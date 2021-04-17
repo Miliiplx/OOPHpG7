@@ -15,6 +15,7 @@ import app.poderes.hechizos.SectumSempra;
 public class JuegoHP {
 
     private List<Wizard> wizards = new ArrayList<>();
+    private List<Elfo> elfos = new ArrayList<>();
     private List<HechizoDefensa> hechizosDefensa = new ArrayList<>();
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
 
@@ -125,6 +126,38 @@ public class JuegoHP {
         dudleyDursley.setParentescoHarry("Primo");
 
     }
+     //ELFOS
+
+     public void inicializarElfos() {
+         Elfo elfo = new Elfo();
+         elfo.setNombre("Dobby");
+         elfo.setSalud(100);
+         elfo.setEdad(200);
+         elfo.setEnergiaMagica(150);
+        List<Hechizo> DobbyHechizos = new ArrayList<>();
+        DobbyHechizos.add(this.hechizosDefensa.get(0));
+        DobbyHechizos.add(this.hechizosAtaque.get(0));
+        Dobby.setHechizos(DobbyHechizos);
+
+        this.elfos.add(Dobby); 
+        
+        elfo = new Elfo();
+        elfo.setNombre("Kreacher");
+        elfo.setSalud(100);
+        elfo.setEdad(550);
+        elfo.setEnergiaMagica(150);
+        List<Hechizo> KreacherHechizos = new ArrayList<>();
+        KreacherHechizos.add(this.hechizosDefensa.get(0));
+        KreacherHechizos.add(this.hechizosAtaque.get(0));
+        Kreacher.setHechizos(KreacherHechizos);
+
+        this.elfos.add(Kreacher);
+
+
+        
+     }
+
+        
 
     private void inicializarHechizos() {
         CaveInimicum caveInimicum = new CaveInimicum();
@@ -152,6 +185,14 @@ public class JuegoHP {
 
     public void setWizards(List<Wizard> wizards) {
         this.wizards = wizards;
+    }
+
+    public List<Elfo> getElfos() {
+        return this.elfos;
+    }
+
+    public void setElfos(List<Elfo> elfos) {
+        this.elfos = elfos;
     }
 
 

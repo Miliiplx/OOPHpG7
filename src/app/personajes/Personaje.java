@@ -9,6 +9,7 @@ public class Personaje {
     private String casa;
     private List<Wizard> wizards = new ArrayList<>();
     private List<Muggle> muggles = new ArrayList<>();
+    
 
 
     //Getter y Setter
