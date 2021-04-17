@@ -68,9 +68,24 @@ public class App {
 
             int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
 
+            Hechizo hechizo = atacante.getHechizos().get(IndiceHechizoSeleccionado);
+
             System.out.println(atacante.getNombre() + " ataca a "+ oponente.getNombre());
             
-            atacante.atacar(oponente, atacante.getHechizos().get(IndiceHechizoSeleccionado));
+            System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
+            System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
+            
+            System.out.println("Salud del oponente: " + oponente.getSalud());
+            System.out.println("Energia del atacante: " + atacante.getEnergiaMagica());
+
+            Thread.sleep(1000);
+
+            atacante.atacar(oponente, hechizo);
+
+            System.out.println("Salud del oponente: " + oponente.getSalud());
+            System.out.println("Energia del atacante: " + atacante.getEnergiaMagica());
+
+            Thread.sleep(1000);
             
             System.out.println("A "+ oponente.getNombre() + " le queda "+ oponente.getSalud() + " de salud");
 

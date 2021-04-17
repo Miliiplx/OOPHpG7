@@ -92,7 +92,8 @@ public class Wizard extends Persona implements IHaceMagia {
             this.magoOscuro = true;
             n = 2;
         } */
-        personaje.setSalud(personaje.getSalud() - n * hechizo.getNivelDanio());
+        int salud =  personaje.getSalud() - n * hechizo.getNivelDanio();
+        personaje.setSalud(salud);
 
         this.energiaMagica = this.energiaMagica - hechizo.getEnergiaMagica();
     }
