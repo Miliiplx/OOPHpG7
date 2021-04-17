@@ -10,12 +10,22 @@ import app.transportes.escobas.*; //cambio Escoba por escobas y agrego * . 15/04
 
 public class Wizard extends Persona implements IHaceMagia {
 
+    public Wizard (String nombre,int salud,String casa,int energiaMagica){
+        super.nombre = nombre;
+        super.salud = salud;
+        this.casa = casa;
+        this.energiaMagica = energiaMagica;
+    }
+        
+     
+
     private int energiaMagica; // Posee la energía máx que posee el mago. 150
     private List<Hechizo> hechizos; // Los hechizos que aprendio a usar
     private Escoba escoba; // Escoba que usa para transporte
     private Poder poderInicial; // Poder de nacimiento
     private Artefacto artefacto; // Artefacto que lleva encima y afecta el ataque/defenza
     private boolean magoOscuro; // verdadero si es un mago oscuro
+    protected String casa;
 
     // Getters y Setters
 

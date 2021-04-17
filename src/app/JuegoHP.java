@@ -3,29 +3,19 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.personajes.Elfo;
-import app.personajes.Muggle;
-import app.personajes.Wizard;
-import app.poderes.hechizos.Accio;
-import app.poderes.hechizos.CaveInimicum;
-import app.poderes.hechizos.Crucio;
-import app.poderes.hechizos.Episkey;
-import app.poderes.hechizos.Expelliarmus;
-import app.poderes.hechizos.Hechizo;
-import app.poderes.hechizos.HechizoAtaque;
-import app.poderes.hechizos.HechizoCuracion;
-import app.poderes.hechizos.HechizoDefensa;
-import app.poderes.hechizos.HechizoOcio;
-import app.poderes.hechizos.SectumSempra;
+import app.personajes.*;
+import app.poderes.hechizos.*;
 
 public class JuegoHP {
 
     private List<Wizard> wizards = new ArrayList<>();
     private List<Elfo> elfos = new ArrayList<>();
+    private List<Muggle> muggles = new ArrayList<>();
+    private List<Criatura> criaturas = new ArrayList<>();
     private List<HechizoDefensa> hechizosDefensa = new ArrayList<>();
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
     private List<HechizoOcio> hechizosOcio =    new ArrayList<>();
-    private List<HechizoCuracion> hechizosCuracion = new ArrayList();
+    private List<HechizoCuracion> hechizosCuracion = new ArrayList<>();
 
 
 
@@ -33,12 +23,12 @@ public class JuegoHP {
         // Harr Potter
         this.inicializarHechizos();
 
-        Wizard HP = new Wizard();
-        HP.setNombre("Harry Potter");
-        HP.setCasa("Gryffindor");
+        Wizard HP = new Wizard("Harry Potter",100,"Gryffindor",120);
+        //HP.setNombre("Harry Potter");
+        //HP.setCasa("Gryffindor");
         HP.setEdad(15);
-        HP.setEnergiaMagica(120);
-        HP.setSalud(100);
+        //HP.setEnergiaMagica(120);
+        //HP.setSalud(100);
         //HP.setEscoba(escoba);
         HP.setMagoOscuro(false);
         List<Hechizo> hpHechizos = new ArrayList<>();
@@ -48,17 +38,17 @@ public class JuegoHP {
         //Poder HPPoder = new Poder();
         //HPPoder.setNombre("Inivisibilidad");
         //HP.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a Titanic al catalogo
+        // Recien ahora estoy agregando a personaje al catalogo
         this.wizards.add(HP);
 
         this.inicializarHechizos();
 
-        Wizard Bellatrix = new Wizard();
-        Bellatrix.setNombre("Bellatrix Lestrange");
-        Bellatrix.setCasa("Slytherin");
+        Wizard Bellatrix = new Wizard("Bellatrix Lestrange",100,"Slytherin",140);
+        //Bellatrix.setNombre("Bellatrix Lestrange");
+        //Bellatrix.setCasa("Slytherin");
         Bellatrix.setEdad(40);
-        Bellatrix.setEnergiaMagica(140);
-        Bellatrix.setSalud(100);
+        //Bellatrix.setEnergiaMagica(140);
+        //Bellatrix.setSalud(100);
         //Bellatrix.setEscoba(escoba);
         Bellatrix.setMagoOscuro(true);
         List<Hechizo> BellatrixHechizos = new ArrayList<>();
@@ -68,17 +58,17 @@ public class JuegoHP {
         //Poder BellatrixPoder = new Poder();
         //BellatrixPoder.setNombre("Inivisibilidad");
         //Bellatrix.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a Titanic al catalogo
+        // Recien ahora estoy agregando a personaje al catalogo
         this.wizards.add(Bellatrix);
 
         this.inicializarHechizos();
 
-        Wizard Ron = new Wizard();
-        Ron.setNombre("Ron Weasley");
-        Ron.setCasa("Gryffindor");
+        Wizard Ron = new Wizard("Ron Wasley", 100, "Gryffindor",120);
+        //Ron.setNombre("Ron Weasley");
+        //Ron.setCasa("Gryffindor");
         Ron.setEdad(15);
-        Ron.setEnergiaMagica(120);
-        Ron.setSalud(100);
+        //Ron.setEnergiaMagica(120);
+        //Ron.setSalud(100);
         //Ron.setEscoba(escoba);
         Ron.setMagoOscuro(false);
         List<Hechizo> RonHechizos = new ArrayList<>();
@@ -93,12 +83,12 @@ public class JuegoHP {
 
         this.inicializarHechizos();
 
-        Wizard Hermione = new Wizard();
-        Hermione.setNombre("Hermione Granger");
-        Hermione.setCasa("Gryffindor");
+        Wizard Hermione = new Wizard("Hermione Granger",100,"Gryffindor",120);
+        //Hermione.setNombre("Hermione Granger");
+        //Hermione.setCasa("Gryffindor");
         Hermione.setEdad(15);
-        Hermione.setEnergiaMagica(120);
-        Hermione.setSalud(100);
+        //Hermione.setEnergiaMagica(120);
+        //Hermione.setSalud(100);
         //Ron.setEscoba(escoba);
         Hermione.setMagoOscuro(false);
         List<Hechizo> HermioneHechizos = new ArrayList<>();
@@ -110,38 +100,73 @@ public class JuegoHP {
         //Ron.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Hermione);
+        
+        Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin",150);
+        //Voldemort.setNombre("Lord Voldemort");
+        //Voldemort.setCasa("Slytherin");
+        Voldemort.setEdad(66);
+        //Voldemort.setEnergiaMagica(150);
+        //Voldemort.setSalud(100);
+        Voldemort.setMagoOscuro(true);
+        List<Hechizo> VoldemortHechizos = new ArrayList<>();
+        VoldemortHechizos.add(this.hechizosDefensa.get(0));
+        VoldemortHechizos.add(this.hechizosAtaque.get(0));
+        Voldemort.setHechizos(VoldemortHechizos);
+        //Poder VoldemortPoder = new Poder();
+        //VoldemortPoder.setNombre("Inivisibilidad");
+        //Voldemort.setPoderInicial(poderInicial);
+        // Recien ahora estoy agregando a Personaje al catalogo
+        this.wizards.add(Voldemort);
+        
+        this.inicializarHechizos();
+
+        Wizard Draco = new Wizard("Draco Malfoy",100,"Slyterin",120);
+        //Draco.setNombre("Draco Malfoy");
+        //Draco.setCasa("Slyterin");
+        Draco.setEdad(15);
+        //Draco.setEnergiaMagica(120);
+        //Draco.setSalud(100);
+        Draco.setMagoOscuro(true);
+        List<Hechizo>DracoHechizos = new ArrayList<>();
+        DracoHechizos.add(this.hechizosDefensa.get(0));
+        DracoHechizos.add(this.hechizosAtaque.get(0));
+        Draco.setHechizos(DracoHechizos);
+        //Poder VoldemortPoder = new Poder();
+        //VoldemortPoder.setNombre("Inivisibilidad");
+        //Voldemort.setPoderInicial(poderInicial);
+        // Recien ahora estoy agregando a Personaje al catalogo
+        this.wizards.add(Draco);
+        
+        this.inicializarHechizos();
 
     }
 
     public void inicializarMuggles(){
 
-        Muggle vernonDursley = new Muggle();
-        vernonDursley.setNombre("Nernon Dursley");
-        vernonDursley.setSalud(100);
+        Muggle vernonDursley = new Muggle("Nernon Dursley", 100);
         vernonDursley.setEdad(65); //Nacio en 1928- Edad en el momento que HP recibe la carta.
         vernonDursley.setParentescoHarry("Tío");
 
-        Muggle petuniaDursley = new Muggle();
-        petuniaDursley.setNombre("Petunia Dursley");
-        petuniaDursley.setSalud(100);
+        this.muggles.add(vernonDursley);
+
+        Muggle petuniaDursley = new Muggle("Petunia Dursley", 100);
         petuniaDursley.setEdad(44); //-Nacio en 1949- Edad en el momento que HP recibe la carta.
         petuniaDursley.setParentescoHarry("Tía");
 
-        Muggle dudleyDursley = new Muggle();
-        dudleyDursley.setNombre("Dudley Dursley");
-        dudleyDursley.setSalud(100);
+        this.muggles.add(petuniaDursley);
+
+        Muggle dudleyDursley = new Muggle("Dudley Dursley", 100);
         dudleyDursley.setEdad(13); //-Pelicula 1- Nivel 1.
         dudleyDursley.setParentescoHarry("Primo");
+
+        this.muggles.add(dudleyDursley);
 
     }
      //ELFOS
 
      public void inicializarElfos() {
-         Elfo elfo = new Elfo();
-         elfo.setNombre("Dobby");
-         elfo.setSalud(100);
+         Elfo elfo = new Elfo("Dobby",100,150);
          elfo.setEdad(200);
-         elfo.setEnergiaMagica(150);
         List<Hechizo> DobbyHechizos = new ArrayList<>();
         DobbyHechizos.add(this.hechizosDefensa.get(0));
         DobbyHechizos.add(this.hechizosAtaque.get(0));
@@ -149,11 +174,8 @@ public class JuegoHP {
 
         this.elfos.add(elfo); 
         
-        elfo = new Elfo();
-        elfo.setNombre("Kreacher");
-        elfo.setSalud(100);
+        elfo = new Elfo("Kreacher",100,150);
         elfo.setEdad(550);
-        elfo.setEnergiaMagica(150);
         List<Hechizo> KreacherHechizos = new ArrayList<>();
         KreacherHechizos.add(this.hechizosDefensa.get(0));
         KreacherHechizos.add(this.hechizosAtaque.get(0));
@@ -165,7 +187,26 @@ public class JuegoHP {
         
      }
 
-     // Hechizos  
+     //CRIATURAS
+
+     public void inicializarCriatura(){
+         Criatura criatura = new Criatura("Acromántula", 100);
+         criatura.setEdad(60);
+
+         this.criaturas.add(criatura);
+
+         criatura = new Criatura("Auguerey",100); //FENIX
+     
+        this.criaturas.add(criatura);
+
+        criatura = new Criatura("Basilisco",100);
+
+        this.criaturas.add(criatura);
+         
+
+     }
+
+        
 
     private void inicializarHechizos() {
         CaveInimicum caveInimicum = new CaveInimicum();
@@ -241,6 +282,19 @@ public class JuegoHP {
 
     public void setElfos(List<Elfo> elfos) {
         this.elfos = elfos;
+    }
+
+    public List<Muggle> getMuggles(){
+        return this.muggles;
+    }
+    public void setMuggles(List<Muggle> muggles){
+        this.muggles = muggles;
+    }
+    public List<Criatura> getCriaturas(){
+        return this.criaturas;
+    }
+    public void setCriaturas(List<Criatura> criaturas){
+        this.criaturas = criaturas;
     }
 
 
