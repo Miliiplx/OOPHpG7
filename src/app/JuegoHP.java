@@ -3,6 +3,7 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.personajes.Elfo;
 import app.personajes.Muggle;
 import app.personajes.Wizard;
 import app.poderes.Poder;
@@ -137,9 +138,9 @@ public class JuegoHP {
         List<Hechizo> DobbyHechizos = new ArrayList<>();
         DobbyHechizos.add(this.hechizosDefensa.get(0));
         DobbyHechizos.add(this.hechizosAtaque.get(0));
-        Dobby.setHechizos(DobbyHechizos);
+        elfo.setHechizos(DobbyHechizos);
 
-        this.elfos.add(Dobby); 
+        this.elfos.add(elfo); 
         
         elfo = new Elfo();
         elfo.setNombre("Kreacher");
@@ -149,9 +150,9 @@ public class JuegoHP {
         List<Hechizo> KreacherHechizos = new ArrayList<>();
         KreacherHechizos.add(this.hechizosDefensa.get(0));
         KreacherHechizos.add(this.hechizosAtaque.get(0));
-        Kreacher.setHechizos(KreacherHechizos);
+        elfo.setHechizos(KreacherHechizos);
 
-        this.elfos.add(Kreacher);
+        this.elfos.add(elfo);
 
 
         
