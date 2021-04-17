@@ -214,7 +214,7 @@ public class JuegoHP {
         caveInimicum.setDescripcion("Defensa");
         caveInimicum.setEnergiaMagica(20);
         caveInimicum.setEsOscuro(false);
-        caveInimicum.setNivelCuracion(5);
+        caveInimicum.setNivelCuracion(15);
         caveInimicum.setNivelDanio(0);
         hechizosDefensa.add(caveInimicum);
 
@@ -232,8 +232,8 @@ public class JuegoHP {
         expelliarmus.setDescripcion("Defensa");
         expelliarmus.setEnergiaMagica(30);
         expelliarmus.setEsOscuro(false);
-        expelliarmus.setNivelCuracion(0);
-        expelliarmus.setNivelDanio(40);
+        expelliarmus.setNivelCuracion(10);
+        expelliarmus.setNivelDanio(20);
         hechizosDefensa.add(expelliarmus);
 
         
@@ -252,7 +252,7 @@ public class JuegoHP {
         accio.setEnergiaMagica(30);
         accio.setEsOscuro(false);
         accio.setNivelCuracion(0);
-        accio.setNivelDanio(40);
+        accio.setNivelDanio(20);
         hechizosOcio.add(accio);
 
         Episkey episkey = new Episkey();
@@ -260,8 +260,8 @@ public class JuegoHP {
         episkey.setDescripcion("Curacion");
         episkey.setEnergiaMagica(30);
         episkey.setEsOscuro(false);
-        episkey.setNivelCuracion(0);
-        episkey.setNivelDanio(40);
+        episkey.setNivelCuracion(30);
+        episkey.setNivelDanio(0);
         hechizosCuracion.add(episkey);
 
 
