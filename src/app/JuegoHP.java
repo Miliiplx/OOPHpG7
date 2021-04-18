@@ -231,7 +231,7 @@ public class JuegoHP {
         sectumSempra.setNivelDanio(40);
         hechizosAtaque.add(sectumSempra);
 
-        Expelliarmus expelliarmus = new Expelliarmus();
+        HechizoDefensa expelliarmus = new HechizoDefensa();
         expelliarmus.setNombre("Expelliarmus");
         expelliarmus.setDescripcion("Defensa");
         expelliarmus.setEnergiaMagica(30);
@@ -241,7 +241,7 @@ public class JuegoHP {
         hechizosDefensa.add(expelliarmus);
 
         
-        Crucio crucio = new Crucio();
+        HechizoAtaque crucio = new HechizoAtaque();
         crucio.setNombre("Crucio");
         crucio.setDescripcion("Ataque");
         crucio.setEnergiaMagica(30);
@@ -250,7 +250,7 @@ public class JuegoHP {
         expelliarmus.setNivelDanio(40);
         hechizosAtaque.add(crucio);
 
-        Accio accio = new Accio();
+        HechizoOcio accio = new HechizoOcio();
         accio.setNombre("Accio");
         accio.setDescripcion("Ocio");
         accio.setEnergiaMagica(30);
@@ -259,7 +259,7 @@ public class JuegoHP {
         accio.setNivelDanio(20);
         hechizosOcio.add(accio);
 
-        Episkey episkey = new Episkey();
+        HechizoCuracion episkey = new HechizoCuracion();
         episkey.setNombre("Episkey");
         episkey.setDescripcion("Curacion");
         episkey.setEnergiaMagica(30);
