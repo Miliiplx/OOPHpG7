@@ -1,16 +1,11 @@
 package app.personajes;
-import java.util.*;
 
     public class Personaje {
 
     protected String nombre;
     protected int salud;
     private int edad;
-    private List<Wizard> wizards = new ArrayList<>();
-    private List<Muggle> muggles = new ArrayList<>();
     
-
-
     //Getter y Setter
     public String getNombre(){
         return this.nombre;
@@ -31,23 +26,6 @@ import java.util.*;
     }
     public void setEdad (int edad){
         this.edad = edad;
-    }
-
-    
-    public List<Wizard> getWizards() {
-        return this.wizards;
-    }
-
-    public void setWizards(List<Wizard> wizards) {
-        this.wizards = wizards;
-    }
-
-    public List<Muggle> getMuggles() {
-        return this.muggles;
-    }
-
-    public void setMuggles(List<Muggle> muggles) {
-        this.muggles = muggles;
     }
 
     //Metodo

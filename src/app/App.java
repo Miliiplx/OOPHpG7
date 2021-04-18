@@ -1,14 +1,17 @@
 package app;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import app.personajes.Wizard;
-import app.poderes.hechizos.Hechizo;
+//import app.personajes.Wizard;
+//import app.poderes.hechizos.Hechizo;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        JuegoHP juegoHP = new JuegoHP();
+        juegoHP.comenzarJuego();
         
-        Scanner Teclado = new Scanner(System.in);
+        /*Scanner Teclado = new Scanner(System.in);
 
         JuegoHP juego = new JuegoHP();
 
@@ -98,7 +101,7 @@ public class App {
         }
         else{
             System.out.println( p2.getNombre() + " gano!!!");
-        }
+        }*/
 
     }
 }
