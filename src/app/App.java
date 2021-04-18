@@ -8,6 +8,10 @@ package app;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        //////////////////////////////////NURYS NO TE ASUSTES//////////////////////////////////////////
+        //FUNCIONA TODO.
+        //EL JUEGO "ANDA" nos faltan detallitos jajajaja
+
         JuegoHP juegoHP = new JuegoHP();
         juegoHP.comenzarJuego();
         

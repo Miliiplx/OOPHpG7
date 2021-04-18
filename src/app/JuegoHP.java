@@ -21,6 +21,14 @@ public class JuegoHP {
     private List<HechizoOcio> hechizosOcio =    new ArrayList<>();
     private List<HechizoCuracion> hechizosCuracion = new ArrayList<>();
 
+    public void juntarPersonajes(){
+        this.inicializarCriatura();
+        this.inicializarElfos();
+        this.inicializarMuggles();
+        this.inicializarWizards();
+
+        Object juntarPersonajes;
+    }
 
 
     public void inicializarWizards() {
@@ -67,7 +75,7 @@ public class JuegoHP {
 
         this.inicializarHechizos();
 
-        Wizard Ron = new Wizard("Ron Wasley", 100, "Gryffindor",120);
+        Wizard Ron = new Wizard("Ron Weasley", 100, "Gryffindor",120);
         //Ron.setNombre("Ron Weasley");
         //Ron.setCasa("Gryffindor");
         Ron.setEdad(15);
@@ -213,6 +221,7 @@ public class JuegoHP {
         
 
     private void inicializarHechizos() {
+
         CaveInimicum caveInimicum = new CaveInimicum();
         caveInimicum.setNombre("CaveInimicum");
         caveInimicum.setDescripcion("Defensa");
@@ -344,8 +353,8 @@ public class JuegoHP {
         //mientras ambos tengan salud, pelear entre si
         //gameloop
         while(p1.estaVivo() && p2.estaVivo()){
-            Wizard atacante;
-            Wizard oponente;
+            Object atacante;
+            Personaje oponente;
 
             if (turnoP1){
                 atacante = p1;
@@ -356,35 +365,114 @@ public class JuegoHP {
                 oponente = p1;
             }
 
-            System.out.println("Ingrese el numero del hechizo que desea utilizar " + atacante.getNombre());
+            System.out.println("Ingrese el numero del hechizo que desea utilizar " + ((Wizard) atacante).getNombre());
             index = 1;
-            for (Hechizo hechizo : atacante.getHechizos()) {
+            for (Hechizo hechizo : ((Wizard) atacante).getHechizos()) {
                     System.out.println((index++) + " - " + hechizo.getNombre() +  " : " + hechizo.getDescripcion());
             }
 
             int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
             Teclado.nextLine();
 
-            Hechizo hechizo = atacante.getHechizos().get(IndiceHechizoSeleccionado);
+            Hechizo hechizo = ((Wizard) atacante).getHechizos().get(IndiceHechizoSeleccionado);
 
-            System.out.println(atacante.getNombre() + " ataca a "+ oponente.getNombre());
+            System.out.println(((Wizard) atacante).getNombre() + " ataca a "+ ((Wizard) oponente).getNombre());
             
             System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
             System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
             
-            System.out.println("Salud del oponente: " + oponente.getSalud());
-            System.out.println("Energia del atacante: " + atacante.getEnergiaMagica());
+            System.out.println("Salud del oponente: " + ((Wizard) oponente).getSalud());
+            System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
 
             Thread.sleep(1000);
 
-            atacante.atacar(oponente, hechizo);
+            ((Wizard) atacante).atacar(oponente, hechizo);
 
-            System.out.println("Salud del oponente: " + oponente.getSalud());
-            System.out.println("Energia del atacante: " + atacante.getEnergiaMagica());
+            System.out.println("Salud del oponente: " + ((Wizard) oponente).getSalud());
+            System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
 
             Thread.sleep(1000);
             
-            System.out.println("A "+ oponente.getNombre() + " le queda "+ oponente.getSalud() + " de salud");
+            System.out.println("A "+ ((Personaje) oponente).getNombre() + " le queda "+ ((Wizard) oponente).getSalud() + " de salud");
+
+            turnoP1 = !turnoP1;
+
+            //Pausa el programa por 2 segundos(2000 milisegundos = 2 segundos)
+            Thread.sleep(1000);
+        }
+
+        if (p1.estaVivo()){
+            System.out.println(p1.getNombre() + " gano!!!");
+
+            /////////////////////INICIAMOS LA SEGUNDA PELEA SI EL P1 GANA///////////////////////////////////////
+            //SE ROMPE DESPUES DEL PRIMER ATAQUE DEL ELFO.
+
+            juego.inicializarElfos();
+        
+            System.out.println("Comieza la segunda batalla");
+
+        System.out.println("Selecciona el personaje Elfo (Ingrese el numero del personaje deseado): ");
+        index = 1;
+        for (Elfo elfo : juego.getElfos()) {
+            System.out.println((index++) + " - " + elfo.getNombre());
+        }
+
+        int personajeSeleccionado3 = Teclado.nextInt() - 1;
+        Teclado.nextLine();
+
+        Elfo p3 = juego.getElfos().get(personajeSeleccionado3);
+        
+        System.out.println("Personaje 1 es: " + p1.getNombre());
+        System.out.println("Personaje 2 es: " + p3.getNombre());
+
+        boolean turnoP3 = true;
+
+        System.out.println("Comienza la batalla!");
+        
+        //mientras ambos tengan salud, pelear entre si
+        //gameloop
+        while(p1.estaVivo() && p3.estaVivo()){
+            Object atacante;
+            Personaje oponente;
+
+            if (turnoP1){
+                atacante = p1;
+                oponente = p3;
+            }
+            else{
+                atacante = p3;
+                oponente = p1;
+            }
+
+            System.out.println("Ingrese el numero del hechizo que desea utilizar " + ((Personaje) atacante).getNombre());
+            index = 1;
+            for (Hechizo hechizo : ((Elfo) atacante).getHechizos()) {
+                    System.out.println((index++) + " - " + hechizo.getNombre() +  " : " + hechizo.getDescripcion());
+            }
+
+            int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
+            Teclado.nextLine();
+
+            Hechizo hechizo = ((Elfo) atacante).getHechizos().get(IndiceHechizoSeleccionado);
+
+            System.out.println(((Personaje) atacante).getNombre() + " ataca a "+ ((Personaje) oponente).getNombre());
+            
+            System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
+            System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
+            
+            System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+            System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+
+            Thread.sleep(1000);
+
+            ((Elfo) atacante).atacar(oponente, hechizo);
+
+            System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+            System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+
+            Thread.sleep(1000);
+            
+            System.out.println("A "+ ((Personaje) oponente).getNombre() + " le queda "+ ((Wizard) oponente).getSalud() + " de salud");
 
             turnoP1 = !turnoP1;
 
@@ -396,7 +484,95 @@ public class JuegoHP {
             System.out.println(p1.getNombre() + " gano!!!");
         }
         else{
+            System.out.println( p3.getNombre() + " gano!!!");
+        }
+
+    }
+        else{ //agregue una llave
+            //////////////////////////SEGUNDA PELEA SI EL P2 GANA////////////////////////////////////////////////////
+            //SE ROMPER DESPUES DEL PRIMER ATAQUE DEL ELFO.
             System.out.println( p2.getNombre() + " gano!!!");
+
+            juego.inicializarElfos();
+        
+            System.out.println("Comieza la segunda batalla");
+
+        System.out.println("Selecciona el personaje Elfo (Ingrese el numero del personaje deseado): ");
+        index = 1;
+        for (Elfo elfo : juego.getElfos()) {
+            System.out.println((index++) + " - " + elfo.getNombre());
+        }
+
+        int personajeSeleccionado3 = Teclado.nextInt() - 1;
+        Teclado.nextLine();
+
+        Elfo p3 = juego.getElfos().get(personajeSeleccionado3);
+        
+        System.out.println("Personaje 1 es: " + p2.getNombre());
+        System.out.println("Personaje 2 es: " + p3.getNombre());
+
+        boolean turnoP3 = true;
+
+        System.out.println("Comienza la batalla!");
+        
+        //mientras ambos tengan salud, pelear entre si
+        //gameloop
+        while(p2.estaVivo() && p3.estaVivo()){
+            Object atacante;
+            Personaje oponente;
+
+            if (turnoP1){
+                atacante = p2;
+                oponente = p3;
+            }
+            else{
+                atacante = p3;
+                oponente = p2;
+            }
+
+            System.out.println("Ingrese el numero del hechizo que desea utilizar " + ((Personaje) atacante).getNombre());
+            index = 1;
+            for (Hechizo hechizo : ((Elfo) atacante).getHechizos()) {
+                    System.out.println((index++) + " - " + hechizo.getNombre() +  " : " + hechizo.getDescripcion());
+            }
+
+            int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
+            Teclado.nextLine();
+
+            Hechizo hechizo = ((Elfo) atacante).getHechizos().get(IndiceHechizoSeleccionado);
+
+            System.out.println(((Personaje) atacante).getNombre() + " ataca a "+ ((Personaje) oponente).getNombre());
+            
+            System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
+            System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
+            
+            System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+            System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+
+            Thread.sleep(1000);
+
+            ((Elfo) atacante).atacar(oponente, hechizo);
+
+            System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+            System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+
+            Thread.sleep(1000);
+            
+            System.out.println("A "+ ((Personaje) oponente).getNombre() + " le queda "+ ((Wizard) oponente).getSalud() + " de salud");
+
+            turnoP1 = !turnoP1;
+
+            //Pausa el programa por 2 segundos(2000 milisegundos = 2 segundos)
+            Thread.sleep(1000);
+        }
+
+        if (p1.estaVivo()){
+            System.out.println(p2.getNombre() + " gano!!!");
+        }
+        else{
+            System.out.println( p3.getNombre() + " gano!!!");
+        }
+
 
         }
     }
