@@ -63,8 +63,12 @@ public void aprender(Hechizo hechizo) {
 }
 @Override
 public void atacar(Personaje personaje, Hechizo hechizo) {
-    // TODO Auto-generated method stub
-    
+    int n = 1;
+    int salud =  personaje.getSalud() - n * hechizo.getNivelDanio();
+    personaje.setSalud(salud);
+
+    this.energiaMagica = this.energiaMagica - hechizo.getEnergiaMagica();
+    this.salud =  this.salud + hechizo.getNivelCuracion();
 }
 @Override
 public void atacar(Personaje personaje, String hechizo) {
