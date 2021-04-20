@@ -102,7 +102,8 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void aprender(Hechizo hechizo) {
-        // TODO Auto-generated method stub
+        this.hechizos.add(hechizo);
+        
 
     }
 

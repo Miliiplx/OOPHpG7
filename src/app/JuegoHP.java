@@ -42,7 +42,7 @@ public class JuegoHP {
         // HP.setEscoba(escoba);
         HP.setMagoOscuro(false);
         List<Hechizo> hpHechizos = new ArrayList<>();
-        hpHechizos.add(this.hechizosDefensa.get(0));
+        hpHechizos.add(this.hechizosDefensa.get(2));
         hpHechizos.add(this.hechizosAtaque.get(0));
         HP.setHechizos(hpHechizos);
         // Poder HPPoder = new Poder();
@@ -55,7 +55,6 @@ public class JuegoHP {
 
         Wizard Bellatrix = new Wizard("Bellatrix Lestrange", 100, "Slytherin", 140);
         Bellatrix.setVarita("Su material es el espino son expertas en maldiciones.");
-
         // Bellatrix.setNombre("Bellatrix Lestrange");
         // Bellatrix.setCasa("Slytherin");
         Bellatrix.setEdad(40);
@@ -86,7 +85,7 @@ public class JuegoHP {
         Ron.setMagoOscuro(false);
         List<Hechizo> RonHechizos = new ArrayList<>();
         RonHechizos.add(this.hechizosDefensa.get(0));
-        RonHechizos.add(this.hechizosAtaque.get(0));
+        RonHechizos.add(this.hechizosOcio.get(0));
         Ron.setHechizos(RonHechizos);
         // Poder RonPoder = new Poder();
         // RonPoder.setNombre("Inivisibilidad");
@@ -107,7 +106,7 @@ public class JuegoHP {
         Hermione.setMagoOscuro(false);
         List<Hechizo> HermioneHechizos = new ArrayList<>();
         HermioneHechizos.add(this.hechizosDefensa.get(0));
-        HermioneHechizos.add(this.hechizosAtaque.get(0));
+        HermioneHechizos.add(this.hechizosAtaque.get(2));
         Hermione.setHechizos(HermioneHechizos);
         // Poder RonPoder = new Poder();
         // RonPoder.setNombre("Inivisibilidad");
@@ -125,7 +124,7 @@ public class JuegoHP {
         Voldemort.setMagoOscuro(true);
         List<Hechizo> VoldemortHechizos = new ArrayList<>();
         VoldemortHechizos.add(this.hechizosDefensa.get(0));
-        VoldemortHechizos.add(this.hechizosAtaque.get(0));
+        VoldemortHechizos.add(this.hechizosAtaque.get(1));
         Voldemort.setHechizos(VoldemortHechizos);
         // Poder VoldemortPoder = new Poder();
         // VoldemortPoder.setNombre("Inivisibilidad");
@@ -144,7 +143,7 @@ public class JuegoHP {
         // Draco.setSalud(100);
         Draco.setMagoOscuro(true);
         List<Hechizo> DracoHechizos = new ArrayList<>();
-        DracoHechizos.add(this.hechizosDefensa.get(0));
+        DracoHechizos.add(this.hechizosDefensa.get(1));
         DracoHechizos.add(this.hechizosAtaque.get(0));
         Draco.setHechizos(DracoHechizos);
         // Poder VoldemortPoder = new Poder();
@@ -230,14 +229,56 @@ public class JuegoHP {
 
     private void inicializarHechizos() {
 
+
+        ///////////////////////DEFENSA///////////////////
+        
         CaveInimicum caveInimicum = new CaveInimicum();
         caveInimicum.setNombre("CaveInimicum");
         caveInimicum.setDescripcion("Defensa");
         caveInimicum.setEnergiaMagica(20);
         caveInimicum.setEsOscuro(false);
-        caveInimicum.setNivelCuracion(15);
+        caveInimicum.setNivelCuracion(15);  
         caveInimicum.setNivelDanio(0);
         hechizosDefensa.add(caveInimicum);
+        
+        HechizoDefensa expelliarmus = new HechizoDefensa();
+        expelliarmus.setNombre("Expelliarmus");
+        expelliarmus.setDescripcion("Defensa");
+        expelliarmus.setEnergiaMagica(30);
+        expelliarmus.setEsOscuro(false);
+        expelliarmus.setNivelCuracion(10);
+        expelliarmus.setNivelDanio(20);
+        hechizosDefensa.add(expelliarmus);
+         
+        HechizoDefensa levicorpus = new HechizoDefensa();
+        levicorpus.setNombre("Levicorpus");
+        levicorpus.setDescripcion("Defensa");
+        levicorpus.setEnergiaMagica(20);
+        levicorpus.setOscuro(false);
+        levicorpus.setNivelCuracion(10);
+        levicorpus.setNivelDanio(20);
+        hechizosDefensa.add(levicorpus);
+
+        HechizoDefensa levicorpus = new HechizoDefensa();
+        levicorpus.setNombre("Levicorpus");
+        levicorpus.setDescripcion("Defensa");
+        levicorpus.setEnergiaMagica(20);
+        levicorpus.setOscuro(false);
+        levicorpus.setNivelCuracion(10);
+        levicorpus.setNivelDanio(20);
+        hechizosDefensa.add(levicorpus);
+
+        HechizoDefensa petrificusTotalus = new HechizoDefensa();
+        petrificusTotalus.setNombre("Petrificus Totalus");
+        petrificusTotalus.setDescripcion("Defensa");
+        petrificusTotalus.setEnergiaMagica(20);
+        petrificusTotalus.setEsOscuro(false);
+        petrificusTotalus.setNivelCuracion(0);
+        petrificusTotalus.setNivelDanio(10);
+        hechizosDefensa.add(petrificusTotalus);
+        
+
+        /////////////////////////ATAQUE/////////////////////////////
 
         SectumSempra sectumSempra = new SectumSempra();
         sectumSempra.setNombre("Sectum Sempra");
@@ -248,23 +289,47 @@ public class JuegoHP {
         sectumSempra.setNivelDanio(40);
         hechizosAtaque.add(sectumSempra);
 
-        HechizoDefensa expelliarmus = new HechizoDefensa();
-        expelliarmus.setNombre("Expelliarmus");
-        expelliarmus.setDescripcion("Defensa");
-        expelliarmus.setEnergiaMagica(30);
-        expelliarmus.setEsOscuro(false);
-        expelliarmus.setNivelCuracion(10);
-        expelliarmus.setNivelDanio(20);
-        hechizosDefensa.add(expelliarmus);
-
         HechizoAtaque crucio = new HechizoAtaque();
         crucio.setNombre("Crucio");
         crucio.setDescripcion("Ataque");
         crucio.setEnergiaMagica(30);
         crucio.setEsOscuro(true);
         crucio.setNivelCuracion(0);
-        expelliarmus.setNivelDanio(40);
+        crucio.setNivelDanio(40);
         hechizosAtaque.add(crucio);
+        
+        HechizoAtaque oppugno = new HechizoAtaque();
+        oppugno.setNombre("Oppugno");
+        oppugno.setDescripcion("Ataque");
+        oppugno.setEnergiaMagica(20);
+        oppugno.setEsOscuro(false);
+        oppugno.setNivelCuracion(0);
+        oppugno.setNivelDanio(30);
+        hechizosAtaque.add(oppugno);
+                
+        HechizoDeAtaque morsmordre = new HechizoDefensa();
+        morsmordre.setNombre("Morsmordre");
+        morsmordre.setDescripcion("Ataque");
+        morsmordre.setEnergiaMagica(20);
+        morsmordre.setEsOscuro(true);
+        morsmordre.setNivelCuracion(0);
+        morsmordre.setNivelDanio(30);
+        hechizosAtaque.add(morsmordre);
+
+        ///////////////////////CURACION//////////////////////////////
+
+        HechizoCuracion episkey = new HechizoCuracion();
+        episkey.setNombre("Episkey");
+        episkey.setDescripcion("Curacion");
+        episkey.setEnergiaMagica(30);
+        episkey.setEsOscuro(false);
+        episkey.setNivelCuracion(30);
+        episkey.setNivelDanio(0);
+        hechizosCuracion.add(episkey);
+
+  
+        
+        /////////////////////////OCIO/////////////////////////////
 
         HechizoOcio accio = new HechizoOcio();
         accio.setNombre("Accio");
@@ -275,14 +340,44 @@ public class JuegoHP {
         accio.setNivelDanio(20);
         hechizosOcio.add(accio);
 
-        HechizoCuracion episkey = new HechizoCuracion();
-        episkey.setNombre("Episkey");
-        episkey.setDescripcion("Curacion");
-        episkey.setEnergiaMagica(30);
-        episkey.setEsOscuro(false);
-        episkey.setNivelCuracion(30);
-        episkey.setNivelDanio(0);
-        hechizosCuracion.add(episkey);
+
+        //Hechizos para aprender
+        hechizosOcio wingardiumLeviosa = new HechizoOcio();
+        wingardiumLeviosa.setNombre("Wingardium Leviosa");
+        wingardiumLeviosa.setDescripcion("Ocio");
+        wingardiumLeviosa.setEnergiaMagica(10);
+        wingardiumLeviosa.setOscuro(false);
+        wingardiumLeviosa.setNivelCuracion(0);
+        wingardiumLeviosa.setNivelDanio(10);
+        hechizos.add(wingardiumLeviosa);
+
+        hechizosAtaque imperius = new HechizoAtaque();
+        imperius.setNombre("Imperius");
+        imperius.setDescripcion("Ocio");
+        imperius.setEnergiaMagica(40);
+        imperius.setOscuro(true);
+        imperius.setNivelCuracion(0);
+        imperius.setNivelDanio(30);
+        hechizos.add(imperius);
+
+        hechizoDefensa riddiculus = new HechizoDefensa();
+        riddiculus.setNombre("Ridduculus");
+        riddiculus.setDescripcion("Defensa");
+        riddiculus.setEnergiaMagica(15);
+        riddiculus.setOscuro(false);
+        riddiculus.setNivelCuracion(0);
+        riddiculus.setNivelDanio(15);
+        hechizos.add(riddiculus);
+
+        hechizoCuracion patronus = new HechizoCuracion();
+        patronus.setNombre("Patronus");
+        patronus.setDescripcion("Curacion");
+        patronus.setEnergiaMagica(15);
+        patronus.setOscuro(false);
+        patronus.setNivelCuracion(0);
+        patronus.setNivelDanio(15);
+        patronus.add(patronus);
+
     }
 
     public List<Wizard> getWizards() {
@@ -411,6 +506,22 @@ public class JuegoHP {
             System.out.println(p2.getNombre() + " gano!!!");
             ganador = p2;
         }
+        
+        //////////////////APRENDER NUEVO HECHIZO///////////////////////////////
+        System.out.println("Felicidades ganaste aprender un nuevo hechizo");
+
+        System.out.println("Selecciona el hechizo " + ganador.getNombre());
+
+        index = 1;
+
+        for (Hechizo hechizo : juego.getHechizos()) {
+            
+            System.out.println((index++) + "-" + hechizo.getNombre());
+            
+        }
+
+        int indiceHechizoSeleccionado = Teclado.nextInt() - 1;
+        Teclado.nextLine();
 
         ///////////////////// EMPIEZA LA 2DA PELEA////////////////////////////////
 
