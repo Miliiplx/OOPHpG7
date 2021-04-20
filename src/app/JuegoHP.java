@@ -76,7 +76,7 @@ public class JuegoHP {
         this.inicializarHechizos();
 
         Wizard Ron = new Wizard("Ron Weasley", 100, "Gryffindor", 120);
-        Ron.setVarita("");
+        Ron.setVarita("Su material es madera de sauce con nucleo de Pelo de Unicornio");
         // Ron.setNombre("Ron Weasley");
         // Ron.setCasa("Gryffindor");
         Ron.setEdad(15);
@@ -97,6 +97,7 @@ public class JuegoHP {
         this.inicializarHechizos();
 
         Wizard Hermione = new Wizard("Hermione Granger", 100, "Gryffindor", 120);
+        Hermaione.setVarita("Su material es madera de vid con nucleo de fibra de corazon de Dragon");
         // Hermione.setNombre("Hermione Granger");
         // Hermione.setCasa("Gryffindor");
         Hermione.setEdad(15);
@@ -115,6 +116,7 @@ public class JuegoHP {
         this.wizards.add(Hermione);
 
         Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin", 150);
+        Voldemort.setVarita("Su material es madera de tejo con nucleo de pluma de cola de Fenix");
         // Voldemort.setNombre("Lord Voldemort");
         // Voldemort.setCasa("Slytherin");
         Voldemort.setEdad(66);
@@ -134,6 +136,7 @@ public class JuegoHP {
         this.inicializarHechizos();
 
         Wizard Draco = new Wizard("Draco Malfoy", 100, "Slyterin", 120);
+        Draco.setVarita("Su material es madera de espino con nucleo de Cabello de Unicornio");
         // Draco.setNombre("Draco Malfoy");
         // Draco.setCasa("Slyterin");
         Draco.setEdad(15);
