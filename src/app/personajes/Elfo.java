@@ -41,6 +41,9 @@ public List<Hechizo> getHechizos(){
 public void setHechizos(List<Hechizo> hechizos){
     this.hechizos = hechizos;
 }
+
+//IMPLEMENTO LAS INTERFACES 
+
 @Override
 public int getEnergiaMagica() {
     // TODO Auto-generated method stub

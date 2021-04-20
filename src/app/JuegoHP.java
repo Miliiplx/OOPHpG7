@@ -10,7 +10,6 @@ import app.poderes.hechizos.*;
 
 public class JuegoHP {
     public static Scanner Teclado = new Scanner(System.in);
-    
 
     private List<Wizard> wizards = new ArrayList<>();
     private List<Elfo> elfos = new ArrayList<>();
@@ -18,175 +17,177 @@ public class JuegoHP {
     private List<Criatura> criaturas = new ArrayList<>();
     private List<HechizoDefensa> hechizosDefensa = new ArrayList<>();
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
-    private List<HechizoOcio> hechizosOcio =    new ArrayList<>();
+    private List<HechizoOcio> hechizosOcio = new ArrayList<>();
     private List<HechizoCuracion> hechizosCuracion = new ArrayList<>();
 
-    public void juntarPersonajes(){
-        this.inicializarCriatura();
-        this.inicializarElfos();
-        this.inicializarMuggles();
-        this.inicializarWizards();
-
-        Object juntarPersonajes;
-    }
-
+    /*
+     * public void juntarPersonajes(){ this.inicializarCriatura();
+     * this.inicializarElfos(); this.inicializarMuggles();
+     * this.inicializarWizards();
+     * 
+     * Object juntarPersonajes; }
+     */
 
     public void inicializarWizards() {
-        // Harr Potter
+        // Harr Potter;
         this.inicializarHechizos();
 
-        Wizard HP = new Wizard("Harry Potter",100,"Gryffindor",120);
-        //HP.setNombre("Harry Potter");
-        //HP.setCasa("Gryffindor");
+        Wizard HP = new Wizard("Harry Potter", 100, "Gryffindor", 120);
+        HP.setVarita("Su material es caoba que simboliza la fuerza, seguridad, protección.");
+        // HP.setNombre("Harry Potter");
+        // HP.setCasa("Gryffindor");
         HP.setEdad(15);
-        //HP.setEnergiaMagica(120);
-        //HP.setSalud(100);
-        //HP.setEscoba(escoba);
+        // HP.setEnergiaMagica(120);
+        // HP.setSalud(100);
+        // HP.setEscoba(escoba);
         HP.setMagoOscuro(false);
         List<Hechizo> hpHechizos = new ArrayList<>();
         hpHechizos.add(this.hechizosDefensa.get(0));
         hpHechizos.add(this.hechizosAtaque.get(0));
         HP.setHechizos(hpHechizos);
-        //Poder HPPoder = new Poder();
-        //HPPoder.setNombre("Inivisibilidad");
-        //HP.setPoderInicial(poderInicial);
+        // Poder HPPoder = new Poder();
+        // HPPoder.setNombre("Inivisibilidad");
+        // HP.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a personaje al catalogo
         this.wizards.add(HP);
 
         this.inicializarHechizos();
 
-        Wizard Bellatrix = new Wizard("Bellatrix Lestrange",100,"Slytherin",140);
-        //Bellatrix.setNombre("Bellatrix Lestrange");
-        //Bellatrix.setCasa("Slytherin");
+        Wizard Bellatrix = new Wizard("Bellatrix Lestrange", 100, "Slytherin", 140);
+        Bellatrix.setVarita("Su material es el espino son expertas en maldiciones.");
+
+        // Bellatrix.setNombre("Bellatrix Lestrange");
+        // Bellatrix.setCasa("Slytherin");
         Bellatrix.setEdad(40);
-        //Bellatrix.setEnergiaMagica(140);
-        //Bellatrix.setSalud(100);
-        //Bellatrix.setEscoba(escoba);
+        // Bellatrix.setEnergiaMagica(140);
+        // Bellatrix.setSalud(100);
+        // Bellatrix.setEscoba(escoba);
         Bellatrix.setMagoOscuro(true);
         List<Hechizo> BellatrixHechizos = new ArrayList<>();
         BellatrixHechizos.add(this.hechizosDefensa.get(0));
         BellatrixHechizos.add(this.hechizosAtaque.get(0));
         Bellatrix.setHechizos(BellatrixHechizos);
-        //Poder BellatrixPoder = new Poder();
-        //BellatrixPoder.setNombre("Inivisibilidad");
-        //Bellatrix.setPoderInicial(poderInicial);
+        // Poder BellatrixPoder = new Poder();
+        // BellatrixPoder.setNombre("Inivisibilidad");
+        // Bellatrix.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a personaje al catalogo
         this.wizards.add(Bellatrix);
 
         this.inicializarHechizos();
 
-        Wizard Ron = new Wizard("Ron Weasley", 100, "Gryffindor",120);
-        //Ron.setNombre("Ron Weasley");
-        //Ron.setCasa("Gryffindor");
+        Wizard Ron = new Wizard("Ron Weasley", 100, "Gryffindor", 120);
+        Ron.setVarita("");
+        // Ron.setNombre("Ron Weasley");
+        // Ron.setCasa("Gryffindor");
         Ron.setEdad(15);
-        //Ron.setEnergiaMagica(120);
-        //Ron.setSalud(100);
-        //Ron.setEscoba(escoba);
+        // Ron.setEnergiaMagica(120);
+        // Ron.setSalud(100);
+        // Ron.setEscoba(escoba);
         Ron.setMagoOscuro(false);
         List<Hechizo> RonHechizos = new ArrayList<>();
         RonHechizos.add(this.hechizosDefensa.get(0));
         RonHechizos.add(this.hechizosAtaque.get(0));
         Ron.setHechizos(RonHechizos);
-        //Poder RonPoder = new Poder();
-        //RonPoder.setNombre("Inivisibilidad");
-        //Ron.setPoderInicial(poderInicial);
+        // Poder RonPoder = new Poder();
+        // RonPoder.setNombre("Inivisibilidad");
+        // Ron.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Ron);
 
         this.inicializarHechizos();
 
-        Wizard Hermione = new Wizard("Hermione Granger",100,"Gryffindor",120);
-        //Hermione.setNombre("Hermione Granger");
-        //Hermione.setCasa("Gryffindor");
+        Wizard Hermione = new Wizard("Hermione Granger", 100, "Gryffindor", 120);
+        // Hermione.setNombre("Hermione Granger");
+        // Hermione.setCasa("Gryffindor");
         Hermione.setEdad(15);
-        //Hermione.setEnergiaMagica(120);
-        //Hermione.setSalud(100);
-        //Ron.setEscoba(escoba);
+        // Hermione.setEnergiaMagica(120);
+        // Hermione.setSalud(100);
+        // Ron.setEscoba(escoba);
         Hermione.setMagoOscuro(false);
         List<Hechizo> HermioneHechizos = new ArrayList<>();
         HermioneHechizos.add(this.hechizosDefensa.get(0));
         HermioneHechizos.add(this.hechizosAtaque.get(0));
         Hermione.setHechizos(HermioneHechizos);
-        //Poder RonPoder = new Poder();
-        //RonPoder.setNombre("Inivisibilidad");
-        //Ron.setPoderInicial(poderInicial);
+        // Poder RonPoder = new Poder();
+        // RonPoder.setNombre("Inivisibilidad");
+        // Ron.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Hermione);
-        
-        Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin",150);
-        //Voldemort.setNombre("Lord Voldemort");
-        //Voldemort.setCasa("Slytherin");
+
+        Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin", 150);
+        // Voldemort.setNombre("Lord Voldemort");
+        // Voldemort.setCasa("Slytherin");
         Voldemort.setEdad(66);
-        //Voldemort.setEnergiaMagica(150);
-        //Voldemort.setSalud(100);
+        // Voldemort.setEnergiaMagica(150);
+        // Voldemort.setSalud(100);
         Voldemort.setMagoOscuro(true);
         List<Hechizo> VoldemortHechizos = new ArrayList<>();
         VoldemortHechizos.add(this.hechizosDefensa.get(0));
         VoldemortHechizos.add(this.hechizosAtaque.get(0));
         Voldemort.setHechizos(VoldemortHechizos);
-        //Poder VoldemortPoder = new Poder();
-        //VoldemortPoder.setNombre("Inivisibilidad");
-        //Voldemort.setPoderInicial(poderInicial);
+        // Poder VoldemortPoder = new Poder();
+        // VoldemortPoder.setNombre("Inivisibilidad");
+        // Voldemort.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Voldemort);
-        
+
         this.inicializarHechizos();
 
-        Wizard Draco = new Wizard("Draco Malfoy",100,"Slyterin",120);
-        //Draco.setNombre("Draco Malfoy");
-        //Draco.setCasa("Slyterin");
+        Wizard Draco = new Wizard("Draco Malfoy", 100, "Slyterin", 120);
+        // Draco.setNombre("Draco Malfoy");
+        // Draco.setCasa("Slyterin");
         Draco.setEdad(15);
-        //Draco.setEnergiaMagica(120);
-        //Draco.setSalud(100);
+        // Draco.setEnergiaMagica(120);
+        // Draco.setSalud(100);
         Draco.setMagoOscuro(true);
-        List<Hechizo>DracoHechizos = new ArrayList<>();
+        List<Hechizo> DracoHechizos = new ArrayList<>();
         DracoHechizos.add(this.hechizosDefensa.get(0));
         DracoHechizos.add(this.hechizosAtaque.get(0));
         Draco.setHechizos(DracoHechizos);
-        //Poder VoldemortPoder = new Poder();
-        //VoldemortPoder.setNombre("Inivisibilidad");
-        //Voldemort.setPoderInicial(poderInicial);
+        // Poder VoldemortPoder = new Poder();
+        // VoldemortPoder.setNombre("Inivisibilidad");
+        // Voldemort.setPoderInicial(poderInicial);
         // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Draco);
-        
+
         this.inicializarHechizos();
 
     }
 
-    public void inicializarMuggles(){
+    public void inicializarMuggles() {
 
         Muggle vernonDursley = new Muggle("Nernon Dursley", 100);
-        vernonDursley.setEdad(65); //Nacio en 1928- Edad en el momento que HP recibe la carta.
+        vernonDursley.setEdad(65); // Nacio en 1928- Edad en el momento que HP recibe la carta.
         vernonDursley.setParentescoHarry("Tío");
 
         this.muggles.add(vernonDursley);
 
         Muggle petuniaDursley = new Muggle("Petunia Dursley", 100);
-        petuniaDursley.setEdad(44); //-Nacio en 1949- Edad en el momento que HP recibe la carta.
+        petuniaDursley.setEdad(44); // -Nacio en 1949- Edad en el momento que HP recibe la carta.
         petuniaDursley.setParentescoHarry("Tía");
 
         this.muggles.add(petuniaDursley);
 
         Muggle dudleyDursley = new Muggle("Dudley Dursley", 100);
-        dudleyDursley.setEdad(13); //-Pelicula 1- Nivel 1.
+        dudleyDursley.setEdad(13); // -Pelicula 1- Nivel 1.
         dudleyDursley.setParentescoHarry("Primo");
 
         this.muggles.add(dudleyDursley);
 
     }
-     //ELFOS
+    // ELFOS
 
-     public void inicializarElfos() {
-         Elfo elfo = new Elfo("Dobby",100,150);
-         elfo.setEdad(200);
+    public void inicializarElfos() {
+        Elfo elfo = new Elfo("Dobby", 100, 150);
+        elfo.setEdad(200);
         List<Hechizo> DobbyHechizos = new ArrayList<>();
         DobbyHechizos.add(this.hechizosDefensa.get(0));
         DobbyHechizos.add(this.hechizosAtaque.get(0));
         elfo.setHechizos(DobbyHechizos);
 
-        this.elfos.add(elfo); 
-        
-        elfo = new Elfo("Kreacher",100,150);
+        this.elfos.add(elfo);
+
+        elfo = new Elfo("Kreacher", 100, 150);
         elfo.setEdad(550);
         List<Hechizo> KreacherHechizos = new ArrayList<>();
         KreacherHechizos.add(this.hechizosDefensa.get(0));
@@ -195,30 +196,34 @@ public class JuegoHP {
 
         this.elfos.add(elfo);
 
+        elfo = new Elfo("Winky", 100, 150);
+        elfo.setEdad(270);
+        List<Hechizo> WinkyHechizos = new ArrayList<>();
+        WinkyHechizos.add(this.hechizosDefensa.get(0));
+        WinkyHechizos.add(this.hechizosAtaque.get(0));
+        elfo.setHechizos(WinkyHechizos);
 
-        
-     }
+        this.elfos.add(elfo);
 
-     //CRIATURAS
+    }
 
-     public void inicializarCriatura(){
-         Criatura criatura = new Criatura("Acromántula", 100);
-         criatura.setEdad(60);
+    // CRIATURAS
 
-         this.criaturas.add(criatura);
+    public void inicializarCriatura() {
+        Criatura criatura = new Criatura("Acromántula", 100);
+        criatura.setEdad(60);
 
-         criatura = new Criatura("Auguerey",100); //FENIX
-     
         this.criaturas.add(criatura);
 
-        criatura = new Criatura("Basilisco",100);
+        criatura = new Criatura("Auguerey", 100); // FENIX
 
         this.criaturas.add(criatura);
-         
 
-     }
+        criatura = new Criatura("Basilisco", 100);
 
-        
+        this.criaturas.add(criatura);
+
+    }
 
     private void inicializarHechizos() {
 
@@ -249,7 +254,6 @@ public class JuegoHP {
         expelliarmus.setNivelDanio(20);
         hechizosDefensa.add(expelliarmus);
 
-        
         HechizoAtaque crucio = new HechizoAtaque();
         crucio.setNombre("Crucio");
         crucio.setDescripcion("Ataque");
@@ -276,9 +280,6 @@ public class JuegoHP {
         episkey.setNivelCuracion(30);
         episkey.setNivelDanio(0);
         hechizosCuracion.add(episkey);
-
-
-
     }
 
     public List<Wizard> getWizards() {
@@ -297,23 +298,23 @@ public class JuegoHP {
         this.elfos = elfos;
     }
 
-    public List<Muggle> getMuggles(){
+    public List<Muggle> getMuggles() {
         return this.muggles;
     }
-    public void setMuggles(List<Muggle> muggles){
+
+    public void setMuggles(List<Muggle> muggles) {
         this.muggles = muggles;
     }
-    public List<Criatura> getCriaturas(){
+
+    public List<Criatura> getCriaturas() {
         return this.criaturas;
     }
-    public void setCriaturas(List<Criatura> criaturas){
+
+    public void setCriaturas(List<Criatura> criaturas) {
         this.criaturas = criaturas;
     }
 
-
-    public void comenzarJuego() throws InterruptedException{
-
-        
+    public void comenzarJuego() {
 
         JuegoHP juego = new JuegoHP();
 
@@ -331,36 +332,37 @@ public class JuegoHP {
         Teclado.nextLine();
 
         Wizard p1 = juego.getWizards().get(personajeSeleccionado1);
-        
+
         System.out.println("Selecciona el personaje del segundo jugador (Ingrese el numero del personaje deseado): ");
         index = 1;
         for (Wizard wizard : juego.getWizards()) {
             System.out.println((index++) + " - " + wizard.getNombre());
         }
-        
+
         int personajeSeleccionado2 = Teclado.nextInt() - 1;
         Teclado.nextLine();
-        
+
         Wizard p2 = juego.getWizards().get(personajeSeleccionado2);
-        
+
         System.out.println("Personaje 1 es: " + p1.getNombre());
+        System.out.println("Varita mágica: " + p1.getVarita());
         System.out.println("Personaje 2 es: " + p2.getNombre());
+        System.out.println("Varita mágica: " + p2.getVarita());
 
         boolean turnoP1 = true;
 
         System.out.println("Comienza la batalla!");
-        
-        //mientras ambos tengan salud, pelear entre si
-        //gameloop
-        while(p1.estaVivo() && p2.estaVivo()){
+
+        // mientras ambos tengan salud, pelear entre si
+        // gameloop
+        while (p1.estaVivo() && p2.estaVivo()) {
             Personaje atacante;
             Personaje oponente;
 
-            if (turnoP1){
+            if (turnoP1) {
                 atacante = p1;
                 oponente = p2;
-            }
-            else{
+            } else {
                 atacante = p2;
                 oponente = p1;
             }
@@ -368,7 +370,7 @@ public class JuegoHP {
             System.out.println("Ingrese el numero del hechizo que desea utilizar " + ((Wizard) atacante).getNombre());
             index = 1;
             for (Hechizo hechizo : ((Wizard) atacante).getHechizos()) {
-                    System.out.println((index++) + " - " + hechizo.getNombre() +  " : " + hechizo.getDescripcion());
+                System.out.println((index++) + " - " + hechizo.getNombre() + " : " + hechizo.getDescripcion());
             }
 
             int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
@@ -376,54 +378,47 @@ public class JuegoHP {
 
             Hechizo hechizo = ((Wizard) atacante).getHechizos().get(IndiceHechizoSeleccionado);
 
-            System.out.println(((Wizard) atacante).getNombre() + " ataca a "+ ((Wizard) oponente).getNombre());
-            
+            System.out.println(((Wizard) atacante).getNombre() + " ataca a " + ((Wizard) oponente).getNombre());
+
             System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
             System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
-            
+
             System.out.println("Salud del oponente: " + ((Wizard) oponente).getSalud());
             System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
-
-            Thread.sleep(1000);
 
             ((Wizard) atacante).atacar(oponente, hechizo);
 
             System.out.println("Salud del oponente: " + ((Wizard) oponente).getSalud());
             System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
 
-            Thread.sleep(1000);
-            
-            System.out.println("A "+ ((Personaje) oponente).getNombre() + " le queda "+ ((Wizard) oponente).getSalud() + " de salud");
+            System.out.println("A " + ((Personaje) oponente).getNombre() + " le queda " + ((Wizard) oponente).getSalud()
+                    + " de salud");
 
             turnoP1 = !turnoP1;
 
-            //Pausa el programa por 2 segundos(2000 milisegundos = 2 segundos)
-            Thread.sleep(1000);
         }
 
-        //Declaramos un ganador para jugar la proxima ronda
+        // Declaramos un ganador para jugar la proxima ronda
         Wizard ganador;
 
-        if (p1.estaVivo()){
+        if (p1.estaVivo()) {
             System.out.println(p1.getNombre() + " gano!!!");
             ganador = p1;
-        } else{
+        } else {
             System.out.println(p2.getNombre() + " gano!!!");
             ganador = p2;
         }
 
-        Thread.sleep(1000);
-            /////////////////////INICIAMOS LA SEGUNDA PELEA SI EL P1 GANA///////////////////////////////////////
-            //SE ROMPE DESPUES DEL PRIMER ATAQUE DEL ELFO.
+        ///////////////////// EMPIEZA LA 2DA PELEA////////////////////////////////
 
         juego.inicializarElfos();
-        
+
         System.out.println("Comieza la segunda batalla");
         System.out.println("El ganador se enfrentara con un Elfo Magico!");
         System.out.println("Selecciona el personaje Elfo (Ingrese el numero del personaje deseado): ");
-        
+
         p1 = ganador;
-        
+
         index = 1;
         for (Elfo elfo : juego.getElfos()) {
             System.out.println((index++) + " - " + elfo.getNombre());
@@ -440,181 +435,185 @@ public class JuegoHP {
         turnoP1 = true;
 
         System.out.println("Comienza la batalla!");
-        
-        //mientras ambos tengan salud, pelear entre si
-        //gameloop
-        while(p1.estaVivo() && p3.estaVivo()){
+
+        // mientras ambos tengan salud, pelear entre si
+        // gameloop
+        while (p1.estaVivo() && p3.estaVivo()) {
             Object atacante;
             Personaje oponente;
 
-            if (turnoP1){
+            if (turnoP1) {
                 atacante = p1;
                 oponente = p3;
-            }
-            else{
+            } else {
                 atacante = p3;
                 oponente = p1;
             }
 
-            System.out.println("Ingrese el numero del hechizo que desea utilizar " + ((Personaje) atacante).getNombre());
+            System.out
+                    .println("Ingrese el numero del hechizo que desea utilizar " + ((Personaje) atacante).getNombre());
             index = 1;
 
             Hechizo hechizo;
 
-            if(atacante == p1){
+            if (atacante == p1) {
                 for (Hechizo h : ((Wizard) atacante).getHechizos()) {
-                    System.out.println((index++) + " - " + h.getNombre() +  " : " + h.getDescripcion());
+                    System.out.println((index++) + " - " + h.getNombre() + " : " + h.getDescripcion());
                 }
                 int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
                 Teclado.nextLine();
                 hechizo = ((Wizard) atacante).getHechizos().get(IndiceHechizoSeleccionado);
 
-                System.out.println(((Personaje) atacante).getNombre() + " ataca a "+ ((Personaje) oponente).getNombre());
-            
+                System.out
+                        .println(((Personaje) atacante).getNombre() + " ataca a " + ((Personaje) oponente).getNombre());
+
                 System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
                 System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
-                
-                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
-                System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
-    
-                Thread.sleep(1000);
-    
-                ((Wizard) atacante).atacar(oponente, hechizo);
-    
+
                 System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
                 System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
 
-            }else{
+                ((Wizard) atacante).atacar(oponente, hechizo);
+
+                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+                System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
+
+            } else {
 
                 for (Hechizo h : ((Elfo) atacante).getHechizos()) {
-                    System.out.println((index++) + " - " + h.getNombre() +  " : " + h.getDescripcion());
+                    System.out.println((index++) + " - " + h.getNombre() + " : " + h.getDescripcion());
                 }
                 int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
                 Teclado.nextLine();
                 hechizo = ((Elfo) atacante).getHechizos().get(IndiceHechizoSeleccionado);
 
-                System.out.println(((Personaje) atacante).getNombre() + " ataca a "+ ((Personaje) oponente).getNombre());
-            
+                System.out
+                        .println(((Personaje) atacante).getNombre() + " ataca a " + ((Personaje) oponente).getNombre());
+
                 System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
                 System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
-                
+
                 System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
                 System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
-    
-                Thread.sleep(1000);
-    
+
                 ((Elfo) atacante).atacar(oponente, hechizo);
-    
+
                 System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
                 System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
 
             }
 
-           
-
-            Thread.sleep(1000);
-            
-            System.out.println("A "+ ((Personaje) oponente).getNombre() + " le queda "+ ((Personaje) oponente).getSalud() + " de salud");
+            System.out.println("A " + ((Personaje) oponente).getNombre() + " le queda "
+                    + ((Personaje) oponente).getSalud() + " de salud");
 
             turnoP1 = !turnoP1;
 
-            //Pausa el programa por 2 segundos(2000 milisegundos = 2 segundos)
-            Thread.sleep(1000);
         }
 
-        if (p1.estaVivo()){
+        if (p1.estaVivo()) {
             System.out.println(p1.getNombre() + " gano!!!");
-        }
-        else{
-            System.out.println( p3.getNombre() + " gano!!!");
-        }
-
-    } //else{ //agregue una llave
-/*             //////////////////////////SEGUNDA PELEA SI EL P2 GANA////////////////////////////////////////////////////
-            //SE ROMPER DESPUES DEL PRIMER ATAQUE DEL ELFO.
-            System.out.println( p2.getNombre() + " gano!!!");
-
-            juego.inicializarElfos();
-        
-            System.out.println("Comieza la segunda batalla");
-
-        System.out.println("Selecciona el personaje Elfo (Ingrese el numero del personaje deseado): ");
-        index = 1;
-        for (Elfo elfo : juego.getElfos()) {
-            System.out.println((index++) + " - " + elfo.getNombre());
+        } else {
+            System.out.println(p3.getNombre() + " gano!!!");
         }
 
-        int personajeSeleccionado3 = Teclado.nextInt() - 1;
-        Teclado.nextLine();
+    }
 
-        Elfo p3 = juego.getElfos().get(personajeSeleccionado3);
-        
-        System.out.println("Personaje 1 es: " + p2.getNombre());
-        System.out.println("Personaje 2 es: " + p3.getNombre());
+    ///////////////////////////////////// MINIJUEGO///////////////////////////////////////////////
 
-        boolean turnoP3 = true;
+    public void miniJuego() {
 
-        System.out.println("Comienza la batalla!");
-        
-        //mientras ambos tengan salud, pelear entre si
-        //gameloop
-        while(p2.estaVivo() && p3.estaVivo()){
-            Object atacante;
-            Personaje oponente;
+        String palabraScreta = getPalabraSecreta();
 
-            if (turnoP1){
-                atacante = p2;
-                oponente = p3;
+        char[] palabraGuiones = getGuionesDePalabra(palabraScreta);
+
+        boolean juegoTerminado = false;
+
+        Scanner teclado = new Scanner(System.in);
+
+        int intentos = 7;
+
+        do {
+
+            System.out.println("Tienes " + intentos + " intentos");
+
+            System.out.println(palabraGuiones);
+
+            System.out.println("");
+
+            System.out.println("Introduzca una letra");
+
+            char letra = teclado.next().charAt(0);
+
+            boolean algunaLetraAcertada = false;
+
+            for (int i = 0; i < palabraScreta.length(); i++) {
+                if (palabraScreta.charAt(i) == letra) {
+                    palabraGuiones[i] = letra;
+                    algunaLetraAcertada = true;
+                }
             }
-            else{
-                atacante = p3;
-                oponente = p2;
-            }
+            if (!algunaLetraAcertada)
+                System.out.println("No has acertado ninguna letra");
+            --intentos;
+            if (intentos == 0) {
+                System.out.println("Has perdido porque agotaste los intentos");
+                juegoTerminado = true;
 
-            System.out.println("Ingrese el numero del hechizo que desea utilizar " + ((Personaje) atacante).getNombre());
-            index = 1;
-            for (Hechizo hechizo : ((Elfo) atacante).getHechizos()) {
-                    System.out.println((index++) + " - " + hechizo.getNombre() +  " : " + hechizo.getDescripcion());
             }
 
-            int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
-            Teclado.nextLine();
+            else {
 
-            Hechizo hechizo = ((Elfo) atacante).getHechizos().get(IndiceHechizoSeleccionado);
+                boolean juegoGanado = !hayGuiones(palabraGuiones);
 
-            System.out.println(((Personaje) atacante).getNombre() + " ataca a "+ ((Personaje) oponente).getNombre());
-            
-            System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
-            System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
-            
-            System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
-            System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+                if (juegoGanado) {
 
-            Thread.sleep(1000);
+                    System.out.println("Ganaste, tu premio es usar un nuevo hechizo de defensa");
+                    juegoTerminado = true;
+                }
 
-            ((Elfo) atacante).atacar(oponente, hechizo);
+            }
 
-            System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
-            System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+        } while (!juegoTerminado);
+        teclado.close();
 
-            Thread.sleep(1000);
-            
-            System.out.println("A "+ ((Personaje) oponente).getNombre() + " le queda "+ ((Wizard) oponente).getSalud() + " de salud");
+    }
 
-            turnoP1 = !turnoP1;
+    static String getPalabraSecreta() {
 
-            //Pausa el programa por 2 segundos(2000 milisegundos = 2 segundos)
-            Thread.sleep(1000);
-        } */
-/* 
-        if (p1.estaVivo()){
-            System.out.println(p2.getNombre() + " gano!!!");
+        String[] palabras =
+
+                { "varita", /* 1 */
+                        "escoba", /* 2 */
+                        "piedra", /* 3 */
+                        "capa", /* 4 */
+                        "tren", /* 5 */
+                        "elfo", /* 6 */
+                };
+
+        Random r = new Random();
+        int n = r.nextInt(palabras.length);
+        return palabras[n];
+    }
+
+    static char[] getGuionesDePalabra(String palabra) {
+        int nLetrasPalabraSecreta = palabra.length();
+
+        char[] palabraGuiones = new char[nLetrasPalabraSecreta];
+
+        for (int i = 0; i < palabraGuiones.length; i++) {
+            palabraGuiones[i] = '_';
         }
-        else{
-            System.out.println( p3.getNombre() + " gano!!!");
-        }
- */
 
-       //}
-   // }
+        return palabraGuiones;
+
+    }
+
+    static boolean hayGuiones(char[] array) {
+        for (char l : array) {
+            if (l == '_')
+                return true;
+        }
+        return false;
+    }
+
 }

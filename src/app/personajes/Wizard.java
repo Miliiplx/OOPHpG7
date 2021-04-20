@@ -6,7 +6,7 @@ import app.artefactos.Artefacto;
 import app.interfaces.IHaceMagia;
 import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
-import app.transportes.escobas.*; //cambio Escoba por escobas y agrego * . 15/04
+import app.transportes.*;
 
 public class Wizard extends Persona implements IHaceMagia {
 
@@ -26,8 +26,17 @@ public class Wizard extends Persona implements IHaceMagia {
     private Artefacto artefacto; // Artefacto que lleva encima y afecta el ataque/defenza
     private boolean magoOscuro; // verdadero si es un mago oscuro
     protected String casa;
+    private String varita;
 
     // Getters y Setters
+
+    public String getVarita(){
+        return this.varita;
+    }
+
+    public void setVarita(String varita){
+        this.varita = varita;
+    }
 
     public int getEnergiaMagica() {
         return this.energiaMagica;
@@ -76,6 +85,8 @@ public class Wizard extends Persona implements IHaceMagia {
     public void setMagoOscuro(boolean magoOscuro) {
         this.magoOscuro = magoOscuro;
     }
+
+    //IMPLEMENTO LAS INTERFACES
 
     @Override
     public Poder getPoderInicia() {

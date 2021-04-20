@@ -10,6 +10,8 @@ public class Criatura extends Personaje implements IEsMagico {
         super.salud = salud;
     }
 
+    //IMPLEMENTO LAS INTERFACES
+
     @Override
     public boolean esInvisibleAMuggles() {
         // TODO Auto-generated method stub
