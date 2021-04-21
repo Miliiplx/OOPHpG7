@@ -127,4 +127,8 @@ public class Wizard extends Persona implements IHaceMagia {
         // TODO Auto-generated method stub
 
     }
+
+    public boolean aprender(List<Hechizo> hechizos2) {
+        return false;
+    }
 }

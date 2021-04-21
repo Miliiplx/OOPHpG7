@@ -15,6 +15,7 @@ public class JuegoHP {
     private List<Elfo> elfos = new ArrayList<>();
     private List<Muggle> muggles = new ArrayList<>();
     private List<Criatura> criaturas = new ArrayList<>();
+    private List<Hechizo> hechizos = new ArrayList<>();
     private List<HechizoDefensa> hechizosDefensa = new ArrayList<>();
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
     private List<HechizoOcio> hechizosOcio = new ArrayList<>();
@@ -228,7 +229,8 @@ public class JuegoHP {
     }
 
     private void inicializarHechizos() {
-
+        this.hechizos.clear();
+        this.hechizosAtaque.clear();
 
         ///////////////////////DEFENSA///////////////////
         
@@ -249,21 +251,12 @@ public class JuegoHP {
         expelliarmus.setNivelCuracion(10);
         expelliarmus.setNivelDanio(20);
         hechizosDefensa.add(expelliarmus);
-         
-        HechizoDefensa levicorpus = new HechizoDefensa();
-        levicorpus.setNombre("Levicorpus");
-        levicorpus.setDescripcion("Defensa");
-        levicorpus.setEnergiaMagica(20);
-        levicorpus.setOscuro(false);
-        levicorpus.setNivelCuracion(10);
-        levicorpus.setNivelDanio(20);
-        hechizosDefensa.add(levicorpus);
 
         HechizoDefensa levicorpus = new HechizoDefensa();
         levicorpus.setNombre("Levicorpus");
         levicorpus.setDescripcion("Defensa");
         levicorpus.setEnergiaMagica(20);
-        levicorpus.setOscuro(false);
+        levicorpus.setEsOscuro(false);
         levicorpus.setNivelCuracion(10);
         levicorpus.setNivelDanio(20);
         hechizosDefensa.add(levicorpus);
@@ -307,7 +300,7 @@ public class JuegoHP {
         oppugno.setNivelDanio(30);
         hechizosAtaque.add(oppugno);
                 
-        HechizoDeAtaque morsmordre = new HechizoDefensa();
+        HechizoAtaque morsmordre = new HechizoAtaque();
         morsmordre.setNombre("Morsmordre");
         morsmordre.setDescripcion("Ataque");
         morsmordre.setEnergiaMagica(20);
@@ -342,41 +335,41 @@ public class JuegoHP {
 
 
         //Hechizos para aprender
-        hechizosOcio wingardiumLeviosa = new HechizoOcio();
+        HechizoOcio wingardiumLeviosa = new HechizoOcio();
         wingardiumLeviosa.setNombre("Wingardium Leviosa");
         wingardiumLeviosa.setDescripcion("Ocio");
         wingardiumLeviosa.setEnergiaMagica(10);
-        wingardiumLeviosa.setOscuro(false);
+        wingardiumLeviosa.setEsOscuro(false);
         wingardiumLeviosa.setNivelCuracion(0);
         wingardiumLeviosa.setNivelDanio(10);
         hechizos.add(wingardiumLeviosa);
 
-        hechizosAtaque imperius = new HechizoAtaque();
+        HechizoAtaque imperius = new HechizoAtaque();
         imperius.setNombre("Imperius");
         imperius.setDescripcion("Ocio");
         imperius.setEnergiaMagica(40);
-        imperius.setOscuro(true);
+        imperius.setEsOscuro(true);
         imperius.setNivelCuracion(0);
         imperius.setNivelDanio(30);
         hechizos.add(imperius);
 
-        hechizoDefensa riddiculus = new HechizoDefensa();
+        HechizoDefensa riddiculus = new HechizoDefensa();
         riddiculus.setNombre("Ridduculus");
         riddiculus.setDescripcion("Defensa");
         riddiculus.setEnergiaMagica(15);
-        riddiculus.setOscuro(false);
+        riddiculus.setEsOscuro(false);
         riddiculus.setNivelCuracion(0);
         riddiculus.setNivelDanio(15);
         hechizos.add(riddiculus);
 
-        hechizoCuracion patronus = new HechizoCuracion();
+        HechizoCuracion patronus = new HechizoCuracion();
         patronus.setNombre("Patronus");
         patronus.setDescripcion("Curacion");
         patronus.setEnergiaMagica(15);
-        patronus.setOscuro(false);
+        patronus.setEsOscuro(false);
         patronus.setNivelCuracion(0);
         patronus.setNivelDanio(15);
-        patronus.add(patronus);
+        hechizos.add(patronus);
 
     }
 
@@ -411,6 +404,15 @@ public class JuegoHP {
     public void setCriaturas(List<Criatura> criaturas) {
         this.criaturas = criaturas;
     }
+    
+    public List<Hechizo> getHechizos() {
+        return this.hechizos;
+    }
+
+    public void setHechizos(List<Hechizo> hechizos) {
+        this.hechizos = hechizos;
+    }
+
 
     public void comenzarJuego() {
 
@@ -508,21 +510,28 @@ public class JuegoHP {
         }
         
         //////////////////APRENDER NUEVO HECHIZO///////////////////////////////
+        
         System.out.println("Felicidades ganaste aprender un nuevo hechizo");
 
         System.out.println("Selecciona el hechizo " + ganador.getNombre());
         
 
-       index = 1;
-
-        for (Hechizo hechizo : juego.getHechizos()) {
+        int index2 = 1;
+        List<Hechizo> listaHechizos = juego.getHechizos();
+        System.out.println("Cantidad de Hechizos " + listaHechizos.size());
+        
+        for (Hechizo hechizo : listaHechizos) {
             
-            System.out.println((index++) + "-" + hechizo.getNombre());
+            System.out.println((index2++) + "-" + hechizo.getNombre());
             
         }
 
         int indiceHechizoSeleccionado = Teclado.nextInt() - 1;
-        Teclado.nextLine();
+        Teclado.nextLine(); 
+
+        ganador.aprender(listaHechizos.get(indiceHechizoSeleccionado));
+
+
 
         ///////////////////// EMPIEZA LA 2DA PELEA////////////////////////////////
 
@@ -578,9 +587,9 @@ public class JuegoHP {
                 int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
                 Teclado.nextLine();
                 hechizo = ((Wizard) atacante).getHechizos().get(IndiceHechizoSeleccionado);
-
-                System.out
-                        .println(((Personaje) atacante).getNombre() + " ataca a " + ((Personaje) oponente).getNombre());
+                
+      
+                System.out.println(((Personaje) atacante).getNombre() + " ataca a " + ((Personaje) oponente).getNombre());
 
                 System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
                 System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
