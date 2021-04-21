@@ -96,7 +96,7 @@ public class JuegoHP {
         this.inicializarHechizos();
 
         Wizard Hermione = new Wizard("Hermione Granger", 100, "Gryffindor", 120);
-        Hermaione.setVarita("Su material es madera de vid con nucleo de fibra de corazon de Dragon");
+        Hermione.setVarita("Su material es madera de vid con nucleo de fibra de corazon de Dragon");
         // Hermione.setNombre("Hermione Granger");
         // Hermione.setCasa("Gryffindor");
         Hermione.setEdad(15);
@@ -511,8 +511,9 @@ public class JuegoHP {
         System.out.println("Felicidades ganaste aprender un nuevo hechizo");
 
         System.out.println("Selecciona el hechizo " + ganador.getNombre());
+        
 
-        index = 1;
+       index = 1;
 
         for (Hechizo hechizo : juego.getHechizos()) {
             
