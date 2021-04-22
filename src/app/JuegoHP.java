@@ -14,6 +14,20 @@ import app.poderes.Poder;
 import app.poderes.hechizos.*;
 
 public class JuegoHP {
+
+    
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_MAGENTA = "\033[35m";
+
+
     public static Scanner Teclado = new Scanner(System.in);
 
     private List<Wizard> wizards = new ArrayList<>();
@@ -28,26 +42,13 @@ public class JuegoHP {
     private List<Artefacto> artefactos = new ArrayList<>();
     
 
-    /*
-     * public void juntarPersonajes(){ this.inicializarCriatura();
-     * this.inicializarElfos(); this.inicializarMuggles();
-     * this.inicializarWizards();
-     * 
-     * Object juntarPersonajes; }
-     */
-
     public void inicializarWizards() {
         // Harr Potter;
         this.inicializarHechizos();
 
         Wizard HP = new Wizard("Harry Potter", 100, "Gryffindor", 120);
         HP.setVarita("Su material es caoba que simboliza la fuerza, seguridad, protección.");
-        // HP.setNombre("Harry Potter");
-        // HP.setCasa("Gryffindor");
         HP.setEdad(15);
-        // HP.setEnergiaMagica(120);
-        // HP.setSalud(100);
-        // HP.setEscoba(escoba);
         HP.setMagoOscuro(false);
         List<Hechizo> hpHechizos = new ArrayList<>();
         hpHechizos.add(this.hechizosDefensa.get(2));
@@ -63,33 +64,19 @@ public class JuegoHP {
 
         Wizard Bellatrix = new Wizard("Bellatrix Lestrange", 100, "Slytherin", 140);
         Bellatrix.setVarita("Su material es el espino son expertas en maldiciones.");
-        // Bellatrix.setNombre("Bellatrix Lestrange");
-        // Bellatrix.setCasa("Slytherin");
         Bellatrix.setEdad(40);
-        // Bellatrix.setEnergiaMagica(140);
-        // Bellatrix.setSalud(100);
-        // Bellatrix.setEscoba(escoba);
         Bellatrix.setMagoOscuro(true);
         List<Hechizo> BellatrixHechizos = new ArrayList<>();
         BellatrixHechizos.add(this.hechizosDefensa.get(0));
         BellatrixHechizos.add(this.hechizosAtaque.get(0));
         Bellatrix.setHechizos(BellatrixHechizos);
-        // Poder BellatrixPoder = new Poder();
-        // BellatrixPoder.setNombre("Inivisibilidad");
-        // Bellatrix.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a personaje al catalogo
         this.wizards.add(Bellatrix);
 
         this.inicializarHechizos();
 
         Wizard Ron = new Wizard("Ron Weasley", 100, "Gryffindor", 120);
         Ron.setVarita("Su material es madera de sauce con nucleo de Pelo de Unicornio");
-        // Ron.setNombre("Ron Weasley");
-        // Ron.setCasa("Gryffindor");
         Ron.setEdad(15);
-        // Ron.setEnergiaMagica(120);
-        // Ron.setSalud(100);
-        // Ron.setEscoba(escoba);
         Ron.setMagoOscuro(false);
         List<Hechizo> RonHechizos = new ArrayList<>();
         RonHechizos.add(this.hechizosDefensa.get(0));
@@ -105,12 +92,7 @@ public class JuegoHP {
 
         Wizard Hermione = new Wizard("Hermione Granger", 100, "Gryffindor", 120);
         Hermione.setVarita("Su material es madera de vid con nucleo de fibra de corazon de Dragon");
-        // Hermione.setNombre("Hermione Granger");
-        // Hermione.setCasa("Gryffindor");
         Hermione.setEdad(15);
-        // Hermione.setEnergiaMagica(120);
-        // Hermione.setSalud(100);
-        // Ron.setEscoba(escoba);
         Hermione.setMagoOscuro(false);
         List<Hechizo> HermioneHechizos = new ArrayList<>();
         HermioneHechizos.add(this.hechizosDefensa.get(0));
@@ -124,11 +106,7 @@ public class JuegoHP {
 
         Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin", 150);
         Voldemort.setVarita("Su material es madera de tejo con nucleo de pluma de cola de Fenix");
-        // Voldemort.setNombre("Lord Voldemort");
-        // Voldemort.setCasa("Slytherin");
         Voldemort.setEdad(66);
-        // Voldemort.setEnergiaMagica(150);
-        // Voldemort.setSalud(100);
         Voldemort.setMagoOscuro(true);
         List<Hechizo> VoldemortHechizos = new ArrayList<>();
         VoldemortHechizos.add(this.hechizosDefensa.get(0));
@@ -144,11 +122,7 @@ public class JuegoHP {
 
         Wizard Draco = new Wizard("Draco Malfoy", 100, "Slyterin", 120);
         Draco.setVarita("Su material es madera de espino con nucleo de Cabello de Unicornio");
-        // Draco.setNombre("Draco Malfoy");
-        // Draco.setCasa("Slyterin");
         Draco.setEdad(15);
-        // Draco.setEnergiaMagica(120);
-        // Draco.setSalud(100);
         Draco.setMagoOscuro(true);
         List<Hechizo> DracoHechizos = new ArrayList<>();
         DracoHechizos.add(this.hechizosDefensa.get(1));
@@ -167,19 +141,19 @@ public class JuegoHP {
     public void inicializarMuggles() {
 
         Muggle vernonDursley = new Muggle("Nernon Dursley", 100);
-        vernonDursley.setEdad(65); // Nacio en 1928- Edad en el momento que HP recibe la carta.
+        vernonDursley.setEdad(65);
         vernonDursley.setParentescoHarry("Tío");
 
         this.muggles.add(vernonDursley);
 
         Muggle petuniaDursley = new Muggle("Petunia Dursley", 100);
-        petuniaDursley.setEdad(44); // -Nacio en 1949- Edad en el momento que HP recibe la carta.
+        petuniaDursley.setEdad(44);
         petuniaDursley.setParentescoHarry("Tía");
 
         this.muggles.add(petuniaDursley);
 
         Muggle dudleyDursley = new Muggle("Dudley Dursley", 100);
-        dudleyDursley.setEdad(13); // -Pelicula 1- Nivel 1.
+        dudleyDursley.setEdad(13);
         dudleyDursley.setParentescoHarry("Primo");
 
         this.muggles.add(dudleyDursley);
@@ -430,13 +404,13 @@ public class JuegoHP {
         this.hechizos = hechizos;
     }
 
-     public List<Artefacto> getArtefactos() {
+    /* public List<Artefacto> getArtefactos() {
         return this.artefactos;
     }
 
     public void setArtefactos(List<Artefacto> artectos) {
         this.artefactos = artefactos;
-    }
+    }*/
 
     
 
@@ -444,7 +418,11 @@ public class JuegoHP {
 
         JuegoHP juego = new JuegoHP();
 
-        System.out.println("Bienvenido al Mundo Mágico de Harry Potter");
+        System.out.println(ANSI_YELLOW + "****************************************");
+        System.out.println(ANSI_YELLOW + "****************************************");
+        System.out.println(ANSI_MAGENTA + "BIENVENIDO AL MÁGICO MUNDO DE HARRY POTTER");
+        System.out.println(ANSI_YELLOW + "****************************************");
+        System.out.println(ANSI_YELLOW + "****************************************" + ANSI_RESET);
 
         juego.inicializarWizards();
 
@@ -470,9 +448,9 @@ public class JuegoHP {
 
         Wizard p2 = juego.getWizards().get(personajeSeleccionado2);
 
-        System.out.println("Personaje 1 es: " + p1.getNombre());
+        System.out.println("Personaje 1 es: " + ANSI_GREEN + p1.getNombre());
         System.out.println("Varita mágica: " + p1.getVarita());
-        System.out.println("Personaje 2 es: " + p2.getNombre());
+        System.out.println("Personaje 2 es: " + ANSI_BLUE + p2.getNombre());
         System.out.println("Varita mágica: " + p2.getVarita());
 
         boolean turnoP1 = true;
@@ -585,12 +563,6 @@ public class JuegoHP {
         String piedraResurreccion; */
 
         ganador.asignarArtefacto(piedraR);
-
-       
-
-
-
-
 
         ///////////////////// EMPIEZA LA 2DA PELEA////////////////////////////////
 
