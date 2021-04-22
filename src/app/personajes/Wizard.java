@@ -86,6 +86,7 @@ public class Wizard extends Persona implements IHaceMagia {
         this.magoOscuro = magoOscuro;
     }
 
+
     //IMPLEMENTO LAS INTERFACES
 
     @Override
@@ -105,6 +106,12 @@ public class Wizard extends Persona implements IHaceMagia {
         this.hechizos.add(hechizo);
         
 
+    }
+
+    
+    public void asignarArtefacto(Artefacto artefacto){
+        this.artefacto = artefacto;
+        
     }
 
     @Override
@@ -130,5 +137,6 @@ public class Wizard extends Persona implements IHaceMagia {
 
     public boolean aprender(List<Hechizo> hechizos2) {
         return false;
-    }
+   
+     }
 }

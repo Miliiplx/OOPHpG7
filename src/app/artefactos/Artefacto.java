@@ -51,6 +51,7 @@ public class Artefacto implements IEsMagico {
         this.poder = poder;
     }
 
+
     //IMPLEMENTO LAS INTERFACES.
     
     @Override

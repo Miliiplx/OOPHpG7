@@ -7,7 +7,7 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaMuerte {
 
     public PiedraResurreccion(String nombre, Poder poder) {
         super(nombre, poder);
-        //TODO Auto-generated constructor stub
+        
     }
 
     @Override
@@ -15,5 +15,6 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaMuerte {
         // TODO Auto-generated method stub
         return false;
     }
+    
     
 }

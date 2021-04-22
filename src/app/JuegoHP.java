@@ -5,7 +5,12 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.text.Position;
+
+import app.artefactos.Artefacto;
+import app.artefactos.PiedraResurreccion;
 import app.personajes.*;
+import app.poderes.Poder;
 import app.poderes.hechizos.*;
 
 public class JuegoHP {
@@ -20,6 +25,8 @@ public class JuegoHP {
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
     private List<HechizoOcio> hechizosOcio = new ArrayList<>();
     private List<HechizoCuracion> hechizosCuracion = new ArrayList<>();
+    private List<Artefacto> artefactos = new ArrayList<>();
+    
 
     /*
      * public void juntarPersonajes(){ this.inicializarCriatura();
@@ -370,8 +377,18 @@ public class JuegoHP {
         patronus.setNivelCuracion(0);
         patronus.setNivelDanio(15);
         hechizos.add(patronus);
+        
 
     }
+
+    ////////////////////////Piedra de resurrección/////////
+    
+    Poder resucitar;
+    PiedraResurreccion piedraR = new PiedraResurreccion("Piedra de resurreción", resucitar);
+    
+    
+
+
 
     public List<Wizard> getWizards() {
         return this.wizards;
@@ -413,6 +430,15 @@ public class JuegoHP {
         this.hechizos = hechizos;
     }
 
+     public List<Artefacto> getArtefactos() {
+        return this.artefactos;
+    }
+
+    public void setArtefactos(List<Artefacto> artectos) {
+        this.artefactos = artefactos;
+    }
+
+    
 
     public void comenzarJuego() {
 
@@ -512,6 +538,7 @@ public class JuegoHP {
         //////////////////APRENDER NUEVO HECHIZO///////////////////////////////
         
         System.out.println("Felicidades ganaste aprender un nuevo hechizo");
+    
 
         System.out.println("Selecciona el hechizo " + ganador.getNombre());
         
@@ -530,6 +557,38 @@ public class JuegoHP {
         Teclado.nextLine(); 
 
         ganador.aprender(listaHechizos.get(indiceHechizoSeleccionado));
+
+        ///////// Artefacto///////
+
+       /* System.out.println("Ganaste la Piedra de Resurreccion" + ganador.getNombre());
+        
+        if  (p1.estaMuerto() && p1.asignarArtefacto()){
+            int salud = p1.getSalud() + (100);
+            p1.setSalud(salud);
+        } 
+        */
+        
+
+/*         int index3 = 1;
+        List<Artefacto> listaArtefactos = juego.getArtefactos();
+        System.out.println("Oprima el número para tener la Piedra" + listaArtefactos.size());
+        
+        for (Artefacto artefacto : listaArtefactos) {
+            
+            System.out.println((index3++) + "-" + artefacto.getNombre());
+            
+        }
+
+        int indiceSeleccionado = Teclado.nextInt() - 1;
+        Teclado.nextLine(); 
+
+        String piedraResurreccion; */
+
+        ganador.asignarArtefacto(piedraR);
+
+       
+
+
 
 
 

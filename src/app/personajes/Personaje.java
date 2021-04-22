@@ -28,7 +28,7 @@ package app.personajes;
         this.edad = edad;
     }
 
-    //Metodo
+    //METODO ESTA VIVO
 
     public boolean estaVivo(){
         if (this.salud > 0){
@@ -38,4 +38,19 @@ package app.personajes;
             return false;
         }
     }
+
+    //METODO ESTA MUERTO
+
+    public boolean estaMuerto() {
+        if (this.salud < 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+
+
+
 }
