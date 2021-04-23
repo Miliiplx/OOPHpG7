@@ -22,7 +22,7 @@ private List<Hechizo> hechizos; //Los hechizos que aprendio a usar
 
 //Getters y Setters
 
-public int getEnergisMagica(){
+public int getEnergiaMagica(){
     return this.energiaMagica;
 }
 public void setEnergiaMagica(int energiaMagica){
@@ -44,11 +44,6 @@ public void setHechizos(List<Hechizo> hechizos){
 
 //IMPLEMENTO LAS INTERFACES 
 
-@Override
-public int getEnergiaMagica() {
-    // TODO Auto-generated method stub
-    return 0;
-}
 @Override
 public Poder getPoderInicia() {
     // TODO Auto-generated method stub
