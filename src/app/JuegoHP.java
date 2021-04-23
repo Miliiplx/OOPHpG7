@@ -1,19 +1,14 @@
 package app;
 
 import java.util.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.text.Position;
-
-import app.artefactos.Artefacto;
+//import app.artefactos.Artefacto;
 import app.artefactos.PiedraResurreccion;
 import app.personajes.*;
 import app.poderes.Poder;
 import app.poderes.hechizos.*;
 
 public class JuegoHP {
+
 
     
     public static final String ANSI_RESET = "\u001B[0m";
@@ -39,11 +34,11 @@ public class JuegoHP {
     private List<HechizoAtaque> hechizosAtaque = new ArrayList<>();
     private List<HechizoOcio> hechizosOcio = new ArrayList<>();
     private List<HechizoCuracion> hechizosCuracion = new ArrayList<>();
-    private List<Artefacto> artefactos = new ArrayList<>();
+   
     
 
     public void inicializarWizards() {
-        // Harr Potter;
+        
         this.inicializarHechizos();
 
         Wizard HP = new Wizard("Harry Potter", 100, "Gryffindor", 120);
@@ -52,12 +47,8 @@ public class JuegoHP {
         HP.setMagoOscuro(false);
         List<Hechizo> hpHechizos = new ArrayList<>();
         hpHechizos.add(this.hechizosDefensa.get(2));
-        hpHechizos.add(this.hechizosAtaque.get(0));
+        hpHechizos.add(this.hechizosAtaque.get(2));
         HP.setHechizos(hpHechizos);
-        // Poder HPPoder = new Poder();
-        // HPPoder.setNombre("Inivisibilidad");
-        // HP.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a personaje al catalogo
         this.wizards.add(HP);
 
         this.inicializarHechizos();
@@ -82,10 +73,7 @@ public class JuegoHP {
         RonHechizos.add(this.hechizosDefensa.get(0));
         RonHechizos.add(this.hechizosOcio.get(0));
         Ron.setHechizos(RonHechizos);
-        // Poder RonPoder = new Poder();
-        // RonPoder.setNombre("Inivisibilidad");
-        // Ron.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a Personaje al catalogo
+
         this.wizards.add(Ron);
 
         this.inicializarHechizos();
@@ -98,10 +86,7 @@ public class JuegoHP {
         HermioneHechizos.add(this.hechizosDefensa.get(0));
         HermioneHechizos.add(this.hechizosAtaque.get(2));
         Hermione.setHechizos(HermioneHechizos);
-        // Poder RonPoder = new Poder();
-        // RonPoder.setNombre("Inivisibilidad");
-        // Ron.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a Personaje al catalogo
+  
         this.wizards.add(Hermione);
 
         Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin", 150);
@@ -112,10 +97,6 @@ public class JuegoHP {
         VoldemortHechizos.add(this.hechizosDefensa.get(0));
         VoldemortHechizos.add(this.hechizosAtaque.get(1));
         Voldemort.setHechizos(VoldemortHechizos);
-        // Poder VoldemortPoder = new Poder();
-        // VoldemortPoder.setNombre("Inivisibilidad");
-        // Voldemort.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Voldemort);
 
         this.inicializarHechizos();
@@ -128,16 +109,12 @@ public class JuegoHP {
         DracoHechizos.add(this.hechizosDefensa.get(1));
         DracoHechizos.add(this.hechizosAtaque.get(0));
         Draco.setHechizos(DracoHechizos);
-        // Poder VoldemortPoder = new Poder();
-        // VoldemortPoder.setNombre("Inivisibilidad");
-        // Voldemort.setPoderInicial(poderInicial);
-        // Recien ahora estoy agregando a Personaje al catalogo
         this.wizards.add(Draco);
 
         this.inicializarHechizos();
 
     }
-
+    
     public void inicializarMuggles() {
 
         Muggle vernonDursley = new Muggle("Nernon Dursley", 100);
@@ -327,7 +304,7 @@ public class JuegoHP {
 
         HechizoAtaque imperius = new HechizoAtaque();
         imperius.setNombre("Imperius");
-        imperius.setDescripcion("Ocio");
+        imperius.setDescripcion("Atanque");
         imperius.setEnergiaMagica(40);
         imperius.setEsOscuro(true);
         imperius.setNivelCuracion(0);
@@ -404,25 +381,21 @@ public class JuegoHP {
         this.hechizos = hechizos;
     }
 
-    /* public List<Artefacto> getArtefactos() {
-        return this.artefactos;
-    }
-
-    public void setArtefactos(List<Artefacto> artectos) {
-        this.artefactos = artefactos;
-    }*/
-
     
 
     public void comenzarJuego() {
 
         JuegoHP juego = new JuegoHP();
 
-        System.out.println(ANSI_YELLOW + "****************************************");
-        System.out.println(ANSI_YELLOW + "****************************************");
+        System.out.println("");
+
+        System.out.println(ANSI_YELLOW + "*******************************************");
+        System.out.println(ANSI_YELLOW + "*******************************************");
         System.out.println(ANSI_MAGENTA + "BIENVENIDO AL MÁGICO MUNDO DE HARRY POTTER");
-        System.out.println(ANSI_YELLOW + "****************************************");
-        System.out.println(ANSI_YELLOW + "****************************************" + ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "*******************************************");
+        System.out.println(ANSI_YELLOW + "*******************************************" + ANSI_RESET);
+        
+        System.out.print("");
 
         juego.inicializarWizards();
 
@@ -448,14 +421,16 @@ public class JuegoHP {
 
         Wizard p2 = juego.getWizards().get(personajeSeleccionado2);
 
-        System.out.println("Personaje 1 es: " + ANSI_GREEN + p1.getNombre());
-        System.out.println("Varita mágica: " + p1.getVarita());
-        System.out.println("Personaje 2 es: " + ANSI_BLUE + p2.getNombre());
-        System.out.println("Varita mágica: " + p2.getVarita());
+        System.out.println("Personaje 1 es: " + ANSI_GREEN + p1.getNombre() + ANSI_RESET);
+        System.out.println(ANSI_CYAN + "Varita mágica: " + ANSI_RESET + p1.getVarita());
+        System.out.println("Personaje 2 es: " + ANSI_BLUE + p2.getNombre() + ANSI_RESET);
+        System.out.println(ANSI_CYAN + "Varita mágica: " + ANSI_RESET + p2.getVarita());
 
         boolean turnoP1 = true;
 
-        System.out.println("Comienza la batalla!");
+        System.out.println(ANSI_BLACK + "#########################");
+        System.out.println(ANSI_RED + "COMIENZA LA BATALLA!!");
+        System.out.println(ANSI_BLACK + "#########################" +ANSI_RESET);
 
         // mientras ambos tengan salud, pelear entre si
         // gameloop
@@ -482,22 +457,24 @@ public class JuegoHP {
 
             Hechizo hechizo = ((Wizard) atacante).getHechizos().get(IndiceHechizoSeleccionado);
 
-            System.out.println(((Wizard) atacante).getNombre() + " ataca a " + ((Wizard) oponente).getNombre());
-
-            System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
-            System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
-
+            System.out.println(ANSI_GREEN + ((Wizard) atacante).getNombre() + ANSI_RESET + " ataca a " + ANSI_BLUE + ((Wizard) oponente).getNombre() + ANSI_RESET);
+            System.out.println("  ");
             System.out.println("Salud del oponente: " + ((Wizard) oponente).getSalud());
             System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
+            System.out.println("  ");
+            System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
+            System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
+            System.out.println("  ");
+           
 
             ((Wizard) atacante).atacar(oponente, hechizo);
 
-            System.out.println("Salud del oponente: " + ((Wizard) oponente).getSalud());
             System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
+            System.out.println("   ");
 
             System.out.println("A " + ((Personaje) oponente).getNombre() + " le queda " + ((Wizard) oponente).getSalud()
                     + " de salud");
-
+             System.out.println("  ");
             turnoP1 = !turnoP1;
 
         }
@@ -506,17 +483,24 @@ public class JuegoHP {
         Wizard ganador;
 
         if (p1.estaVivo()) {
-            System.out.println(p1.getNombre() + " gano!!!");
+            System.out.println(p1.getNombre() + ANSI_CYAN +  " gano!!!" + ANSI_RESET);
             ganador = p1;
         } else {
-            System.out.println(p2.getNombre() + " gano!!!");
+            System.out.println(p2.getNombre() + ANSI_CYAN +  " gano!!!" + ANSI_RESET);
             ganador = p2;
         }
         
         //////////////////APRENDER NUEVO HECHIZO///////////////////////////////
+
+        System.out.println(""); 
         
-        System.out.println("Felicidades ganaste aprender un nuevo hechizo");
+        System.out.println(ANSI_YELLOW + "*****************************************************************");
+        System.out.println(ANSI_YELLOW + "*****************************************************************");
+        System.out.println(ANSI_PURPLE +"FELICIDADES! GANASTE LA OPORTUNIDAD DE APRENDER UN NUEVO HECHIZO");
+        System.out.println(ANSI_YELLOW + "*****************************************************************");
+        System.out.println(ANSI_YELLOW + "*****************************************************************" + ANSI_RESET);
     
+        System.out.println("");
 
         System.out.println("Selecciona el hechizo " + ganador.getNombre());
         
@@ -536,44 +520,23 @@ public class JuegoHP {
 
         ganador.aprender(listaHechizos.get(indiceHechizoSeleccionado));
 
-        ///////// Artefacto///////
-
-       /* System.out.println("Ganaste la Piedra de Resurreccion" + ganador.getNombre());
-        
-        if  (p1.estaMuerto() && p1.asignarArtefacto()){
-            int salud = p1.getSalud() + (100);
-            p1.setSalud(salud);
-        } 
-        */
-        
-
-/*         int index3 = 1;
-        List<Artefacto> listaArtefactos = juego.getArtefactos();
-        System.out.println("Oprima el número para tener la Piedra" + listaArtefactos.size());
-        
-        for (Artefacto artefacto : listaArtefactos) {
-            
-            System.out.println((index3++) + "-" + artefacto.getNombre());
-            
-        }
-
-        int indiceSeleccionado = Teclado.nextInt() - 1;
-        Teclado.nextLine(); 
-
-        String piedraResurreccion; */
-
-        ganador.asignarArtefacto(piedraR);
+      
 
         ///////////////////// EMPIEZA LA 2DA PELEA////////////////////////////////
 
         juego.inicializarElfos();
 
-        System.out.println("Comieza la segunda batalla");
-        System.out.println("El ganador se enfrentara con un Elfo Magico!");
+        System.out.println(ANSI_BLACK +"#############################");
+        System.out.println(ANSI_RED + "COMIENZA LA SEGUNDA RONDA");
+        System.out.println(ANSI_BLACK +"#############################");        
+        System.out.println(ANSI_RED + "EL GANADOR SE ENFRENTARA CON UN ELFO MÁGICO!"+ ANSI_RESET);
         System.out.println("Selecciona el personaje Elfo (Ingrese el numero del personaje deseado): ");
 
         p1 = ganador;
-
+        
+       p1.setSalud(100); //AGREGAMOS ESTO
+       p1.setEnergiaMagica(120);
+       
         index = 1;
         for (Elfo elfo : juego.getElfos()) {
             System.out.println((index++) + " - " + elfo.getNombre());
@@ -584,12 +547,14 @@ public class JuegoHP {
 
         Elfo p3 = juego.getElfos().get(personajeSeleccionado3);
 
-        System.out.println("Personaje 1 es: " + p1.getNombre());
-        System.out.println("Personaje 2 es: " + p3.getNombre());
+        System.out.println("Personaje 1 es: " +ANSI_MAGENTA + p1.getNombre()+ANSI_RESET);
+        System.out.println("Personaje 2 es: " +ANSI_YELLOW + p3.getNombre()+ANSI_RESET);
 
         turnoP1 = true;
 
-        System.out.println("Comienza la batalla!");
+        System.out.println(ANSI_BLACK + "#########################");
+        System.out.println(ANSI_RED + "COMIENZA LA BATALLA!!");
+        System.out.println(ANSI_BLACK + "#########################" +ANSI_RESET);
 
         // mientras ambos tengan salud, pelear entre si
         // gameloop
@@ -620,63 +585,75 @@ public class JuegoHP {
                 hechizo = ((Wizard) atacante).getHechizos().get(IndiceHechizoSeleccionado);
                 
       
-                System.out.println(((Personaje) atacante).getNombre() + " ataca a " + ((Personaje) oponente).getNombre());
-
+                System.out.println(ANSI_MAGENTA + ((Personaje) atacante).getNombre() + ANSI_RESET + " ataca a " + ANSI_YELLOW + ((Personaje) oponente).getNombre() + ANSI_RESET);
+                System.out.println("  ");
+                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+                System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
+                System.out.println("  ");
                 System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
                 System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
+                
 
-                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
-                System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
-
+            System.out.println("  ");
                 ((Wizard) atacante).atacar(oponente, hechizo);
 
-                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+                //System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
                 System.out.println("Energia del atacante: " + ((Wizard) atacante).getEnergiaMagica());
-
+                System.out.println("  ");
             } else {
 
-                for (Hechizo h : ((Elfo) atacante).getHechizos()) {
+               for (Hechizo h : ((Elfo) atacante).getHechizos()) {
                     System.out.println((index++) + " - " + h.getNombre() + " : " + h.getDescripcion());
                 }
                 int IndiceHechizoSeleccionado = Teclado.nextInt() - 1;
                 Teclado.nextLine();
                 hechizo = ((Elfo) atacante).getHechizos().get(IndiceHechizoSeleccionado);
 
-                System.out
-                        .println(((Personaje) atacante).getNombre() + " ataca a " + ((Personaje) oponente).getNombre());
+                System.out.println(ANSI_YELLOW + ((Personaje) atacante).getNombre() + ANSI_RESET + " ataca a " + ANSI_MAGENTA + ((Personaje) oponente).getNombre() + ANSI_RESET);
+
+               
+
+                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
+                System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+                System.out.println("  ");
 
                 System.out.println("Hechizo: nivel de daño: " + hechizo.getNivelDanio());
                 System.out.println("Hechizo: nivel de energia: " + hechizo.getEnergiaMagica());
-
-                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
-                System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+                System.out.println("  ");
 
                 ((Elfo) atacante).atacar(oponente, hechizo);
 
-                System.out.println("Salud del oponente: " + ((Personaje) oponente).getSalud());
                 System.out.println("Energia del atacante: " + ((Elfo) atacante).getEnergiaMagica());
+                System.out.println("  ");
 
             }
+            
 
             System.out.println("A " + ((Personaje) oponente).getNombre() + " le queda "
                     + ((Personaje) oponente).getSalud() + " de salud");
+
+            System.out.println("");
 
             turnoP1 = !turnoP1;
 
         }
 
         if (p1.estaVivo()) {
-            System.out.println(p1.getNombre() + " gano!!!");
-        } else {
-            System.out.println(p3.getNombre() + " gano!!!");
-        }
+            System.out.println(p1.getNombre() + ANSI_CYAN +  " GANO!!!" + ANSI_RESET);
 
+
+        } else {
+            System.out.println(p3.getNombre() + ANSI_CYAN + " GANO!!!" + ANSI_RESET);
+
+        }
     }
+
+    
 
     ///////////////////////////////////// MINIJUEGO///////////////////////////////////////////////
 
-    public void miniJuego() {
 
+    public void miniJuego(){ 
         String palabraScreta = getPalabraSecreta();
 
         char[] palabraGuiones = getGuionesDePalabra(palabraScreta);
@@ -688,6 +665,8 @@ public class JuegoHP {
         int intentos = 7;
 
         do {
+
+            System.out.println("");
 
             System.out.println("Tienes " + intentos + " intentos");
 
@@ -771,4 +750,7 @@ public class JuegoHP {
         return false;
     }
 
+    
 }
+
+
