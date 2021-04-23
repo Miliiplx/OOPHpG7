@@ -1,7 +1,7 @@
 package app.artefactos;
 
 import app.interfaces.IEsMagico;
-import app.poderes.Poder; //PREGUNTAR SI ESTO VA ASI. DE LO CONTRARIO ME SALTA ERROR EN EL TIPO.
+import app.poderes.Poder; 
 
 public class Artefacto implements IEsMagico {
 
@@ -17,7 +17,6 @@ public class Artefacto implements IEsMagico {
     //Ej CapaInvisibilidad tiene el poder de invisibilidad. Los
     //otros son a libre interpretación.
 
-    //private List<Horrocrux> horrocruxes = new ArrayList<>(); LISTA DE HORROCRUXES IDEA.
 
     public String getNombre(){
         return this.nombre;

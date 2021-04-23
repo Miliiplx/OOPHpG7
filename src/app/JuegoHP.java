@@ -1,10 +1,7 @@
 package app;
 
 import java.util.*;
-//import app.artefactos.Artefacto;
-import app.artefactos.PiedraResurreccion;
 import app.personajes.*;
-import app.poderes.Poder;
 import app.poderes.hechizos.*;
 
 public class JuegoHP {
@@ -73,7 +70,6 @@ public class JuegoHP {
         RonHechizos.add(this.hechizosDefensa.get(0));
         RonHechizos.add(this.hechizosOcio.get(0));
         Ron.setHechizos(RonHechizos);
-
         this.wizards.add(Ron);
 
         this.inicializarHechizos();
@@ -86,8 +82,9 @@ public class JuegoHP {
         HermioneHechizos.add(this.hechizosDefensa.get(0));
         HermioneHechizos.add(this.hechizosAtaque.get(2));
         Hermione.setHechizos(HermioneHechizos);
-  
         this.wizards.add(Hermione);
+
+        this.inicializarHechizos();
 
         Wizard Voldemort = new Wizard("Lord Voldemort", 100, "Slytherin", 150);
         Voldemort.setVarita("Su material es madera de tejo con nucleo de pluma de cola de Fenix");
@@ -117,7 +114,7 @@ public class JuegoHP {
     
     public void inicializarMuggles() {
 
-        Muggle vernonDursley = new Muggle("Nernon Dursley", 100);
+        Muggle vernonDursley = new Muggle("Vernon Dursley", 100);
         vernonDursley.setEdad(65);
         vernonDursley.setParentescoHarry("Tío");
 
@@ -192,7 +189,7 @@ public class JuegoHP {
 
         ///////////////////////DEFENSA///////////////////
         
-        CaveInimicum caveInimicum = new CaveInimicum();
+        HechizoDefensa caveInimicum = new HechizoDefensa();
         caveInimicum.setNombre("CaveInimicum");
         caveInimicum.setDescripcion("Defensa");
         caveInimicum.setEnergiaMagica(20);
@@ -231,9 +228,9 @@ public class JuegoHP {
 
         /////////////////////////ATAQUE/////////////////////////////
 
-        SectumSempra sectumSempra = new SectumSempra();
+        HechizoAtaque sectumSempra = new HechizoAtaque();
         sectumSempra.setNombre("Sectum Sempra");
-        sectumSempra.setDescripcion("Ataque");
+        sectumSempra.setDescripcion("Ataque (oscuro)");
         sectumSempra.setEnergiaMagica(30);
         sectumSempra.setEsOscuro(true);
         sectumSempra.setNivelCuracion(0);
@@ -242,7 +239,7 @@ public class JuegoHP {
 
         HechizoAtaque crucio = new HechizoAtaque();
         crucio.setNombre("Crucio");
-        crucio.setDescripcion("Ataque");
+        crucio.setDescripcion("Ataque(oscuro)");
         crucio.setEnergiaMagica(30);
         crucio.setEsOscuro(true);
         crucio.setNivelCuracion(0);
@@ -252,7 +249,7 @@ public class JuegoHP {
         HechizoAtaque oppugno = new HechizoAtaque();
         oppugno.setNombre("Oppugno");
         oppugno.setDescripcion("Ataque");
-        oppugno.setEnergiaMagica(20);
+        oppugno.setEnergiaMagica(40);
         oppugno.setEsOscuro(false);
         oppugno.setNivelCuracion(0);
         oppugno.setNivelDanio(30);
@@ -260,7 +257,7 @@ public class JuegoHP {
                 
         HechizoAtaque morsmordre = new HechizoAtaque();
         morsmordre.setNombre("Morsmordre");
-        morsmordre.setDescripcion("Ataque");
+        morsmordre.setDescripcion("Ataque(oscuro)");
         morsmordre.setEnergiaMagica(20);
         morsmordre.setEsOscuro(true);
         morsmordre.setNivelCuracion(0);
@@ -304,7 +301,7 @@ public class JuegoHP {
 
         HechizoAtaque imperius = new HechizoAtaque();
         imperius.setNombre("Imperius");
-        imperius.setDescripcion("Atanque");
+        imperius.setDescripcion("Ataque (oscuro)");
         imperius.setEnergiaMagica(40);
         imperius.setEsOscuro(true);
         imperius.setNivelCuracion(0);
@@ -332,15 +329,7 @@ public class JuegoHP {
 
     }
 
-    ////////////////////////Piedra de resurrección/////////
-    
-    Poder resucitar;
-    PiedraResurreccion piedraR = new PiedraResurreccion("Piedra de resurreción", resucitar);
-    
-    
-
-
-
+        /////////////////////////GETTERS Y SETTERS////////////////////////////////
     public List<Wizard> getWizards() {
         return this.wizards;
     }
@@ -432,8 +421,7 @@ public class JuegoHP {
         System.out.println(ANSI_RED + "COMIENZA LA BATALLA!!");
         System.out.println(ANSI_BLACK + "#########################" +ANSI_RESET);
 
-        // mientras ambos tengan salud, pelear entre si
-        // gameloop
+
         while (p1.estaVivo() && p2.estaVivo()) {
             Personaje atacante;
             Personaje oponente;
@@ -480,13 +468,14 @@ public class JuegoHP {
         }
 
         // Declaramos un ganador para jugar la proxima ronda
+        
         Wizard ganador;
 
         if (p1.estaVivo()) {
-            System.out.println(p1.getNombre() + ANSI_CYAN +  " gano!!!" + ANSI_RESET);
+            System.out.println(p1.getNombre() + ANSI_CYAN +  " GANO!!!" + ANSI_RESET);
             ganador = p1;
         } else {
-            System.out.println(p2.getNombre() + ANSI_CYAN +  " gano!!!" + ANSI_RESET);
+            System.out.println(p2.getNombre() + ANSI_CYAN +  " GANO!!!" + ANSI_RESET);
             ganador = p2;
         }
         
@@ -496,7 +485,7 @@ public class JuegoHP {
         
         System.out.println(ANSI_YELLOW + "*****************************************************************");
         System.out.println(ANSI_YELLOW + "*****************************************************************");
-        System.out.println(ANSI_PURPLE +"FELICIDADES! GANASTE LA OPORTUNIDAD DE APRENDER UN NUEVO HECHIZO");
+        System.out.println(ANSI_PURPLE + "FELICIDADES! GANASTE LA OPORTUNIDAD DE APRENDER UN NUEVO HECHIZO");
         System.out.println(ANSI_YELLOW + "*****************************************************************");
         System.out.println(ANSI_YELLOW + "*****************************************************************" + ANSI_RESET);
     
@@ -526,15 +515,15 @@ public class JuegoHP {
 
         juego.inicializarElfos();
 
-        System.out.println(ANSI_BLACK +"#############################");
+        System.out.println(ANSI_BLACK + "#############################");
         System.out.println(ANSI_RED + "COMIENZA LA SEGUNDA RONDA");
-        System.out.println(ANSI_BLACK +"#############################");        
+        System.out.println(ANSI_BLACK + "#############################");        
         System.out.println(ANSI_RED + "EL GANADOR SE ENFRENTARA CON UN ELFO MÁGICO!"+ ANSI_RESET);
         System.out.println("Selecciona el personaje Elfo (Ingrese el numero del personaje deseado): ");
 
         p1 = ganador;
         
-       p1.setSalud(100); //AGREGAMOS ESTO
+       p1.setSalud(100);
        p1.setEnergiaMagica(120);
        
         index = 1;
@@ -629,8 +618,7 @@ public class JuegoHP {
             }
             
 
-            System.out.println("A " + ((Personaje) oponente).getNombre() + " le queda "
-                    + ((Personaje) oponente).getSalud() + " de salud");
+            System.out.println("A " + ((Personaje) oponente).getNombre() + " le queda " + ((Personaje) oponente).getSalud() + " de salud");
 
             System.out.println("");
 
@@ -653,28 +641,41 @@ public class JuegoHP {
     ///////////////////////////////////// MINIJUEGO///////////////////////////////////////////////
 
 
-    public void miniJuego(){ 
-        String palabraScreta = getPalabraSecreta();
+    public void miniJuego(){
+        int si = 1;
+         System.out.println(" ");
+         System.out.println(" ");
+         System.out.println(ANSI_CYAN + "¿QUIERES JUGAR UN MINIJUEGO?" + ANSI_RESET);
+         System.out.println(ANSI_YELLOW + "OPRIME 1 PARA JUGAR Y 2 PARA NO JUGAR " + ANSI_YELLOW);
+         System.out.println(" ");
 
-        char[] palabraGuiones = getGuionesDePalabra(palabraScreta);
+         si = Teclado.nextInt(); 
+         Teclado.nextLine();
 
-        boolean juegoTerminado = false;
+         if (si == 1 ){
+            
 
-        Scanner teclado = new Scanner(System.in);
+         String palabraScreta = getPalabraSecreta();
 
-        int intentos = 7;
+         char[] palabraGuiones = getGuionesDePalabra(palabraScreta);
 
-        do {
+         boolean juegoTerminado = false;
+
+         Scanner teclado = new Scanner(System.in);
+
+         int intentos = 7;
+
+         do {
 
             System.out.println("");
 
-            System.out.println("Tienes " + intentos + " intentos");
+            System.out.println(ANSI_RED + "TIENES " + intentos + " INTENTOS" + ANSI_RESET);
 
             System.out.println(palabraGuiones);
 
             System.out.println("");
 
-            System.out.println("Introduzca una letra");
+            System.out.println(ANSI_PURPLE +"INTRODUZCA UNA LETRA" + ANSI_RESET);
 
             char letra = teclado.next().charAt(0);
 
@@ -687,10 +688,10 @@ public class JuegoHP {
                 }
             }
             if (!algunaLetraAcertada)
-                System.out.println("No has acertado ninguna letra");
+                System.out.println(ANSI_RED +"FALLASTE" + ANSI_RESET);
             --intentos;
             if (intentos == 0) {
-                System.out.println("Has perdido porque agotaste los intentos");
+                System.out.println(ANSI_BLUE +"HAS PERDIDO, AGOTASTE LOS INTENTOS" + ANSI_RESET);
                 juegoTerminado = true;
 
             }
@@ -701,7 +702,7 @@ public class JuegoHP {
 
                 if (juegoGanado) {
 
-                    System.out.println("Ganaste, tu premio es usar un nuevo hechizo de defensa");
+                    System.out.println(ANSI_YELLOW + "GANASTE! ERES UN GRAN MAGO" + ANSI_RESET);
                     juegoTerminado = true;
                 }
 
@@ -711,12 +712,17 @@ public class JuegoHP {
         teclado.close();
 
     }
+    else {
+        System.out.println(ANSI_MAGENTA + "GRACIAS POR JUGAR!" + ANSI_RESET);
+    }
+}
 
     static String getPalabraSecreta() {
 
         String[] palabras =
 
-                { "varita", /* 1 */
+                {       
+                        "varita", /* 1 */
                         "escoba", /* 2 */
                         "piedra", /* 3 */
                         "capa", /* 4 */
@@ -749,7 +755,7 @@ public class JuegoHP {
         }
         return false;
     }
-
+    
     
 }
 

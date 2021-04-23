@@ -9,7 +9,7 @@ public interface IHaceMagia {
 
     int getEnergiaMagica(); //Devuelve energía mágica del implementador.
     void setEnergiaMagica(int energiaMagica); //Pone la energía mágica del implementador
-    Poder getPoderInicia(); //Devuelve el poder de nacimiento.
+    Poder getPoderInicial(); //Devuelve el poder de nacimiento.
     void setPoder(Poder poder); //Pone el poder inicial
     Artefacto getArtefacto(); //Devuelve el artefacto del personaje
     void aprender(Hechizo hechizo); //Aprende un hechizo en particular.

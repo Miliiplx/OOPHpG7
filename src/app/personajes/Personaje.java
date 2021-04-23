@@ -39,18 +39,4 @@ package app.personajes;
         }
     }
 
-    //METODO ESTA MUERTO
-
-    public boolean estaMuerto() {
-        if (this.salud < 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-
-
-
 }

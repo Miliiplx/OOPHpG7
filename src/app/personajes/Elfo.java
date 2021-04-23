@@ -45,20 +45,17 @@ public void setHechizos(List<Hechizo> hechizos){
 //IMPLEMENTO LAS INTERFACES 
 
 @Override
-public Poder getPoderInicia() {
-    // TODO Auto-generated method stub
+public Poder getPoderInicial() {
     return null;
 }
 @Override
 public void setPoder(Poder poder) {
-    // TODO Auto-generated method stub
-    
 }
+
 @Override
 public void aprender(Hechizo hechizo) {
-    // TODO Auto-generated method stub
-    
 }
+
 @Override
 public void atacar(Personaje personaje, Hechizo hechizo) {
     int n = 1;
@@ -70,8 +67,6 @@ public void atacar(Personaje personaje, Hechizo hechizo) {
 }
 @Override
 public void atacar(Personaje personaje, String hechizo) {
-    // TODO Auto-generated method stub
-    
 }
 
 }

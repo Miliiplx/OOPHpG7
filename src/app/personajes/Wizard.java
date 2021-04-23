@@ -88,24 +88,14 @@ public class Wizard extends Persona implements IHaceMagia {
 
 
     //IMPLEMENTO LAS INTERFACES
-
-    @Override
-    public Poder getPoderInicia() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     @Override
     public void setPoder(Poder poder) {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
     public void aprender(Hechizo hechizo) {
         this.hechizos.add(hechizo);
-        
-
+    
     }
 
     
@@ -131,12 +121,11 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, String hechizo) {
-        // TODO Auto-generated method stub
 
     }
 
     public boolean aprender(List<Hechizo> hechizos2) {
         return false;
    
-     }
+    }
 }
