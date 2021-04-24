@@ -300,8 +300,8 @@ public class JuegoHP {
         hechizos.add(wingardiumLeviosa);
 
         HechizoAtaque imperius = new HechizoAtaque();
-        imperius.setNombre("Imperius");
-        imperius.setDescripcion("Ataque (oscuro)");
+        imperius.setNombre("Imperius (oscuro)");
+        imperius.setDescripcion("Ataque");
         imperius.setEnergiaMagica(40);
         imperius.setEsOscuro(true);
         imperius.setNivelCuracion(0);
